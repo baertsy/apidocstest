@@ -44,10 +44,13 @@ plugins:
           Végpontok: Endpoints
           Cégek és Kapcsolatok: Company and Contacts
           Rendelések: Orders
+          Integrációs Lehetőségek : Integration Options
+          Követelmények : Requirements
 
 nav:
   - Alapok: index.md
-  - Integrációs lehetőségek : integration_options.md
+  - Integrációs Lehetőségek : integration_options.md
+  - Követelmények : requirements.md
   - Végpontok:
     - Cégek és Kapcsolatok: company.md
     - Rendelések: orders.md
