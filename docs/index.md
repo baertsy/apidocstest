@@ -1,4 +1,4 @@
-# MiniCRM API Alapok (BASICS)
+# MiniCRM API Alapok
 
 Ez a dokumentáció a MiniCRM REST API használatának alapvető fogalmait, architektúráját és alapvető működési elveit mutatja be.
 
