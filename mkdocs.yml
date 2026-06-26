@@ -27,15 +27,16 @@ theme:
 plugins:
   - search
   - i18n:
-      default_language: hu
       languages:
         - code: hu
           name: Magyar
           build: true
+          default: true
           locale: hu
         - code: en
           name: English
           build: true
+          default: false
           locale: en
       nav_translations:
         en:
