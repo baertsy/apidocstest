@@ -54,6 +54,10 @@ plugins:
           Rendelések: Orders
           Ajánlatok: Offers
           Számlázó: Invoice
+          Készlet: Stock
+          Haladó űrlapok: Advanced WebForms
+          Voip API: Voip API
+          Kapcsolat: Contact Us
 
 nav:
   - Alapok: index.md
@@ -69,3 +73,7 @@ nav:
     - Rendelések: orders.md
     - Ajánlatok: offers.md
     - Számlázó: invoices.md
+    - Készlet: products.md
+    - Haladó űrlapok: signup.md
+    - Voip API: calllog.md
+ - Kapcsolat: info.md
