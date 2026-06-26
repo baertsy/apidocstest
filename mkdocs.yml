@@ -46,6 +46,8 @@ plugins:
           Rendelések: Orders
           Integrációs Lehetőségek : Integration Options
           Követelmények : Requirements
+          Címek: Addresses
+          Adatlapok: Project Cards
 
 nav:
   - Alapok: index.md
@@ -53,4 +55,6 @@ nav:
   - Követelmények : requirements.md
   - Végpontok:
     - Cégek és Kapcsolatok: contacts.md
+    - Címek: address.md
+    - Adatlapok: projects.md
     - Rendelések: orders.md
