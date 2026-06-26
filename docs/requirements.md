@@ -2,8 +2,8 @@
 
 ## Követelmények
 Az API használatához hitelesítés szükséges. Az autentikációs folyamathoz az alábbi két elemre van szükség:
-1. **SystemID:** (Részletek a Basics fejezetben).
-2. **API kulcs:** (Részletek a Basics fejezetben).
+1. **SystemID:** (Részletek az Alapok fejezetben).
+2. **API kulcs:** (Részletek az Alapok fejezetben).
 
 > **Fontos:** Erősen ajánlott az integráció megkezdése előtt futtatni a kézikönyvben bemutatott példákat, mivel ez segít jobban megérteni a megvalósításunk működését.
 
