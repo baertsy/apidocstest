@@ -32,9 +32,11 @@ plugins:
         - code: hu
           name: Magyar
           build: true
+          locale: hu
         - code: en
           name: English
           build: true
+          locale: en
       nav_translations:
         en:
           Alapok: Basics
