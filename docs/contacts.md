@@ -28,7 +28,7 @@ Ha egy kapcsolattartót egy meglévő céghez szeretnél rendelni, akkor a `Busi
 
 ---
 
-## Új cég létrehozása
+### Új cég létrehozása
 
 Új cég létrehozásához a cég neve kötelező:
 
@@ -50,7 +50,7 @@ Siker esetén a rendszer az újonnan létrehozott cég azonosítójával válasz
 
 ---
 
-## Új kapcsolattartó létrehozása
+### Új kapcsolattartó létrehozása
 
 Kapcsolattartó esetén legalább a keresztnév vagy a vezetéknév megadása kötelező:
 
@@ -75,9 +75,9 @@ Siker esetén a rendszer az újonnan létrehozott kapcsolattartó azonosítójá
 
 ---
 
-# Cégek / kapcsolattartók keresése
+## Cégek / kapcsolattartók keresése
 
-## Keresés név alapján
+### Keresés név alapján
 
 Ez a végpont a megadott cég- vagy kapcsolattartónévre keres, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.
 
@@ -141,7 +141,7 @@ $ curl -s --user $SystemId:$ApiKey "https://r3.minicrm.hu/Api/R3/Contact?Name=Jo
 
 ---
 
-## Keresés e-mail-cím alapján
+### Keresés e-mail-cím alapján
 
 Ez a végpont a megadott cég- vagy kapcsolattartói e-mail-címre keres, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.
 
@@ -183,7 +183,7 @@ $ curl -s --user $SystemId:$ApiKey "https://r3.minicrm.hu/Api/R3/Contact?Email=j
 
 ---
 
-## Keresés telefonszám alapján
+### Keresés telefonszám alapján
 
 Ez a végpont a megadott cég- vagy kapcsolattartói telefonszámra keres, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.
 
@@ -233,7 +233,7 @@ A rendszer a cég / kapcsolattartó adataival válaszol:
 
 ---
 
-## Keresés frissítési dátum alapján
+### Keresés frissítési dátum alapján
 
 Ez a végpont olyan megadott cégekre / kapcsolattartókra keres, amelyek egy adott dátumon frissültek, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.
 
@@ -283,7 +283,7 @@ $ curl -s --user $SystemId:$ApiKey "https://r3.minicrm.hu/Api/R3/Contact?Updated
 
 ---
 
-## Keresés megadott kulcsszó alapján
+### Keresés megadott kulcsszó alapján
 
 Ez a végpont a megadott kulcsszóra keres a cég / kapcsolattartó adatlap minden szöveges mezőjében. A rendszer csak azokat az eredményeket adja vissza, amelyek a teljes kulcsszóra illeszkednek, és nem számít, hogy a kulcsszót kisbetűvel, nagybetűvel vagy ékezetes betűkkel írod-e be.
 
@@ -336,7 +336,7 @@ A rendszer a cég / kapcsolattartó adataival válaszol:
 
 ---
 
-## Keresés megadott mező alapján
+### Keresés megadott mező alapján
 
 Ez a végpont a cég / kapcsolattartó adatlapon lévő megadott mezőben keres megadott értékre. Megadott mező alatt itt azokat a mezőket értjük, amelyeket a felhasználók adtak hozzá és állítottak be az adatlapokon.
 
