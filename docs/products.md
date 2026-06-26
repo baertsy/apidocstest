@@ -88,7 +88,7 @@ https://r3.minicrm.hu/Api/Invoice/List?StatusGroup=Success&UpdatedSince=2024-02-
 
 ---
 
-# Új termék hozzáadása
+## Új termék hozzáadása
 
 - API végpont: `https://r3.minicrm.hu/Api/R3/Product/`
 - HTTP metódus: `PUT`
@@ -125,7 +125,7 @@ A válasz tartalmazza a generált MiniCRM termékazonosítót:
 
 ---
 
-# Termék frissítése
+## Termék frissítése
 
 - API végpont: `https://r3.minicrm.hu/Api/R3/Product/$Id`
 - Paraméter: `Id` — cseréld ki arra a MiniCRM termékazonosítóra, amelyet új termék létrehozásakor kaptál válaszként.
@@ -159,7 +159,7 @@ Ha a frissítés sikeres volt, a rendszer a termékazonosítóval válaszol:
 
 ---
 
-# Termék törlése
+## Termék törlése
 
 Ahhoz, hogy törölni tudj egy terméket, frissítened kell azt a `Deleted` paraméter használatával, és értékként `1`-et kell megadnod.
 
