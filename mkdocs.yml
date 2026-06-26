@@ -48,6 +48,9 @@ plugins:
           Követelmények : Requirements
           Címek: Addresses
           Adatlapok: Project Cards
+          Teendők: Todos
+          Sablonok: Templates
+          Adatlaptársítások: Card Connections
 
 nav:
   - Alapok: index.md
@@ -57,4 +60,7 @@ nav:
     - Cégek és Kapcsolatok: contacts.md
     - Címek: address.md
     - Adatlapok: projects.md
+    - Adatlaptársítások: card_connection.md
+    - Sablonok: templates.md
+    - Teendők: todo.md
     - Rendelések: orders.md
