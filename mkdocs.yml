@@ -47,6 +47,7 @@ plugins:
 
 nav:
   - Alapok: index.md
+  - Integrációs lehetőségek : integration_options.md
   - Végpontok:
     - Cégek és Kapcsolatok: company.md
     - Rendelések: orders.md
