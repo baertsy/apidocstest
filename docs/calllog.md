@@ -25,7 +25,7 @@ Mielőtt kéréseket küldenél erre a végpontra, meg kell adnod az IP-címeket
 
 ---
 
-## Válasz
+### Válasz
 
 Ha minden rendben ment, az API `HTTP 200 / OK` válaszkóddal válaszol.
 
@@ -39,7 +39,7 @@ A válasz egy JSON-kódolt objektum, amely összesítő statisztikákat tartalma
 
 ---
 
-## Kérés példa #1
+### Kérés példa #1
 
 ```bash
 $ curl -s --user $SystemId:$ApiKey -v -X POST -H "Content-Type: application/json"
@@ -69,7 +69,7 @@ Válasz:
 
 ---
 
-## Kérés példa #2
+### Kérés példa #2
 
 Az első rekord hibákat tartalmaz, a második ismeretlen számról érkezik, a harmadik elem pedig menthető.
 
@@ -115,9 +115,9 @@ Válasz példa #2:
 
 ---
 
-# Telefonhívások keresése
+## Telefonhívások keresése
 
-## Hívások meghallgatása MiniCRM-ben
+### Hívások meghallgatása MiniCRM-ben
 
 Ha a hívásokkal együtt a `ReferenceId` is beküldésre kerül, akkor lehetőség van a hívások meghallgatására a MiniCRM-ben.
 
