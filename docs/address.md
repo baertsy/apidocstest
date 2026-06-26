@@ -2,7 +2,7 @@
 
 Ezzel a végponttal fizikai címeket, azaz postai címeket lehet kezelni.
 
-A MiniCRM-ben kapcsolattartóknak és cégeknek is lehet fizikai címe.
+A MiniCRM-ben személy kapcsolattartóknak és cégeknek is lehet fizikai címe.
 
 ---
 
