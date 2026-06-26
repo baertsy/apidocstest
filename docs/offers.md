@@ -10,7 +10,7 @@ Ezen a végponton keresztül az alábbiakra van lehetőség:
 
 ---
 
-# Ajánlatok létrehozása és kiállítása
+## Ajánlatok létrehozása és kiállítása
 
 A rendszer az ajánlatok esetében hasonló szerkezetű kérést tud feldolgozni, mint amilyen választ ajánlatok lekérésekor kapsz. A funkció `POST` kéréssel használható. Az adatokat a rendszer JSON-kódolt formátumban tudja feldolgozni. Ajánlatok esetén a `CustomerId` és a `ReferenceId` kötelezően megadandó információ.
 
@@ -104,9 +104,9 @@ Az API-válasz átfogó rendelési adatokat tartalmaz, beleértve az egyedi rend
 
 ---
 
-# Ajánlatok keresése
+## Ajánlatok keresése
 
-## Ajánlat részletes adatai
+### Ajánlat részletes adatai
 
 - API végpont: `https://r3.minicrm.hu/Api/Offer/OfferId`
 - Paraméter: `OfferId`
@@ -200,7 +200,7 @@ $ curl -s --user $SystemId:$ApiKey "https://r3.minicrm.hu/Api/Offer/932"
 
 ---
 
-# Ajánlatlista végpont
+## Ajánlatlista végpont
 
 A lenti kérés használatával API-n keresztül lekérheted a létrehozott ajánlataid listáját. A listázás 100 eredményt ad vissza. A lapozás a `Page` paraméterrel végezhető; további részletek a Lapozás fejezetben találhatók.
 
@@ -244,7 +244,7 @@ Megjegyzés: a Stock végpontnál az szerepel, hogy az `Offer/List` speciális v
 
 ---
 
-# Ajánlat adatainak frissítése
+## Ajánlat adatainak frissítése
 
 Az ajánlat teljes módosítása csak `Draft` státuszú példányoknál korlátozott, és az ilyen szerkesztéseket kizárólag a rendszereden belül kell kezdeményezni. Ezzel szemben, amikor az ajánlat a rendszerben jön létre, továbbra is rugalmasan módosíthatod a tételeket, a lehetőségadatlap mezőit, és kiállíthatsz módosított ajánlatokat anélkül, hogy teljesen új ajánlatot kellene létrehoznod az elejétől.
 
