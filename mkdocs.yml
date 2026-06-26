@@ -51,6 +51,9 @@ plugins:
           Teendők: Todos
           Sablonok: Templates
           Adatlaptársítások: Card Connections
+          Rendelések: Orders
+          Ajánlatok: Offers
+          Számlázó: Invoice
 
 nav:
   - Alapok: index.md
@@ -64,3 +67,5 @@ nav:
     - Sablonok: templates.md
     - Teendők: todo.md
     - Rendelések: orders.md
+    - Ajánlatok: offers.md
+    - Számlázó: invoices.md
