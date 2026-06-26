@@ -1,4 +1,4 @@
-# MiniCRM API Basics (BASICS)
+# MiniCRM API Basics
 
 This section covers the fundamental concepts, architecture, and core operational principles of the MiniCRM REST API.
 
