@@ -64,9 +64,9 @@ $ curl -s --user $SystemId:$ApiKey "https://r3.minicrm.hu/Api/R3/TemplateList/11
 
 ---
 
-# Sablonok keresése
+## Sablonok keresése
 
-## Sablon részletes adatai
+### Sablon részletes adatai
 
 Ez a végpont egy adott sablon részleteit jeleníti meg.
 
