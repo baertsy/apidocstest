@@ -164,40 +164,6 @@ Válasz:
 
 ---
 
-## Módosítható mezők
-
-- `ContactId`: akkor releváns, ha az ügyfélszolgálati termékben lévő feladat válasz e-mail típusú feladat. Ebben az esetben a `ContactId` a címzett azonosítója.
-- `AddressId`: a feladatban megadott cím rendszerazonosítója. Ez az Address végponton keresztül kérdezhető le — lásd a cím végpont fejezetet.
-- `Members`: a feladatba bevont érintettek típusa és azonosítója. A Contact végponton keresztül kérdezhető le. Egy feladatban több tag is lehet.
-- `Comment`: a megjegyzés szövege.
-- `Duration`: megadhatod a feladat elvégzésének tervezett időtartamát. Ez az adat percben értendő.
-- `Reminder`: ha a felhasználód kapcsolódik a Google Calendar / Outlook Calendar rendszerhez, értesítéseket kaphatsz. Beállíthatod, hogy az esedékesség előtt hány perccel szeretnél emlékeztetőt kapni.
-- `Status`: ez a mező jelzi, hogy a feladat nyitott vagy lezárt. Egy aktív feladat egyszerűen lezárható úgy, hogy ennek a mezőnek az értékét `Closed` értékre módosítod.
-- `Attachments`: ha egy elérhető URL-t illesztesz be, amely egy fájl letöltési linkjére mutat, a fájl automatikusan feltöltődik a feladathoz. Ha több mellékletet szeretnél feltölteni, vesszővel `,` választhatod el őket, szóköz nélkül.
-
----
-
-## Csak olvasható mezők
-
-- `CreatedBy`: létrehozó — `UserId`. A `Schema/Project` végponton keresztül kérdezhető le — lásd az adott fejezetet.
-- `CreatedAt`: a feladat létrehozásának idejét adja meg.
-- `UpdateAt`: megadja, mikor módosították utoljára a feladatot.
-- `UpdatedBy`: melyik felhasználó végezte a legutóbbi módosítást a feladaton.
-- `ClosedAt`: mikor lett lezárva a feladat.
-- `ClosedBy`: melyik felhasználó zárta le a feladatot.
-- `Mode`: értéke lehet `Task` vagy `Email`.
-- `Notes`: a feladathoz írt megjegyzések mind ebben a tömbben lesznek listázva.
-
----
-
-## Általános
-
-- `Attachments`: itt megkapod a legutóbb feltöltött fájl pontos nevét és formátumát, valamint annak letöltési linkjét.
-
-Ha egy nyitott feladatot `POST` metódussal módosítasz, és a `ClosedAt` mezőt adott dátummal küldöd be, miközben a tömb nem tartalmaz `Status` mezőt, a rendszer lezárja ezt a feladatot.
-
----
-
 ## Teendő frissítése
 
 Meglévő teendő módosítása vagy új létrehozása. Célszerű csak a módosított adatokat újraküldeni, hogy a program hatékonyabban fusson, és elkerülhető legyen, hogy időközben már módosított adatokat korábban letöltött értékekre állíts vissza.
@@ -224,36 +190,41 @@ Válasz:
 
 ---
 
-## Fájlfeltöltés
+### Módosítható mezők
 
-- API végpont: `https://r3.minicrm.hu/Api/R3/ToDo/$ToDoId`
-- Paraméter: `ToDoId`
-- HTTP metódus: `PUT`
-- Adattípus: `JSON`
-
-### Egy fájl feltöltése
-
-```json
-{
-    "Attachments": "https://www.testsite1.com/files/test.pdf"
-}
-```
-
-### Több fájl feltöltése
-
-```json
-{
-     "Attachments": "https://www.testsite1.com/files/test.pdf,https://www.testsite2.com/documents/test_2.pdf"
-}
-```
-
-Lehetőséged van egy vagy több fájlt egyszerre feltölteni egy feladathoz. Ha új fájlt töltesz fel, az hozzáadódik a már feltöltött mellékletekhez, nem írja felül azokat.
-
-Nem tölthetsz fel olyan fájlt vagy fájlokat, amelyek együttes mérete nagyobb mint 24 MB.
+- `ContactId`: akkor releváns, ha az ügyfélszolgálati termékben lévő feladat válasz e-mail típusú feladat. Ebben az esetben a `ContactId` a címzett azonosítója.
+- `AddressId`: a feladatban megadott cím rendszerazonosítója. Ez az Address végponton keresztül kérdezhető le — lásd a cím végpont fejezetet.
+- `Members`: a feladatba bevont érintettek típusa és azonosítója. A Contact végponton keresztül kérdezhető le. Egy feladatban több tag is lehet.
+- `Comment`: a megjegyzés szövege.
+- `Duration`: megadhatod a feladat elvégzésének tervezett időtartamát. Ez az adat percben értendő.
+- `Reminder`: ha a felhasználód kapcsolódik a Google Calendar / Outlook Calendar rendszerhez, értesítéseket kaphatsz. Beállíthatod, hogy az esedékesség előtt hány perccel szeretnél emlékeztetőt kapni.
+- `Status`: ez a mező jelzi, hogy a feladat nyitott vagy lezárt. Egy aktív feladat egyszerűen lezárható úgy, hogy ennek a mezőnek az értékét `Closed` értékre módosítod.
+- `Attachments`: ha egy elérhető URL-t illesztesz be, amely egy fájl letöltési linkjére mutat, a fájl automatikusan feltöltődik a feladathoz. Ha több mellékletet szeretnél feltölteni, vesszővel `,` választhatod el őket, szóköz nélkül.
 
 ---
 
-## Egyedi lezárási dátum és idő
+### Csak olvasható mezők
+
+- `CreatedBy`: létrehozó — `UserId`. A `Schema/Project` végponton keresztül kérdezhető le — lásd az adott fejezetet.
+- `CreatedAt`: a feladat létrehozásának idejét adja meg.
+- `UpdateAt`: megadja, mikor módosították utoljára a feladatot.
+- `UpdatedBy`: melyik felhasználó végezte a legutóbbi módosítást a feladaton.
+- `ClosedAt`: mikor lett lezárva a feladat.
+- `ClosedBy`: melyik felhasználó zárta le a feladatot.
+- `Mode`: értéke lehet `Task` vagy `Email`.
+- `Notes`: a feladathoz írt megjegyzések mind ebben a tömbben lesznek listázva.
+
+---
+
+### Általános
+
+- `Attachments`: itt megkapod a legutóbb feltöltött fájl pontos nevét és formátumát, valamint annak letöltési linkjét.
+
+Ha egy nyitott feladatot `POST` metódussal módosítasz, és a `ClosedAt` mezőt adott dátummal küldöd be, miközben a tömb nem tartalmaz `Status` mezőt, a rendszer lezárja ezt a feladatot.
+
+---
+
+### Egyedi lezárási dátum és idő
 
 Lehetőséged van lezárni a feladatot, és egyedi lezárási dátumot hozzáadni. Ha így zársz le egy feladatot, az időrendi sorrendben fog megjelenni az adatlap előzményeiben.
 
@@ -286,3 +257,33 @@ Válasz:
    "Id":1111
 }
 ```
+
+
+## Fájlfeltöltés
+
+- API végpont: `https://r3.minicrm.hu/Api/R3/ToDo/$ToDoId`
+- Paraméter: `ToDoId`
+- HTTP metódus: `PUT`
+- Adattípus: `JSON`
+
+### Egy fájl feltöltése
+
+```json
+{
+    "Attachments": "https://www.testsite1.com/files/test.pdf"
+}
+```
+
+### Több fájl feltöltése
+
+```json
+{
+     "Attachments": "https://www.testsite1.com/files/test.pdf,https://www.testsite2.com/documents/test_2.pdf"
+}
+```
+
+Lehetőséged van egy vagy több fájlt egyszerre feltölteni egy feladathoz. Ha új fájlt töltesz fel, az hozzáadódik a már feltöltött mellékletekhez, nem írja felül azokat.
+
+Nem tölthetsz fel olyan fájlt vagy fájlokat, amelyek együttes mérete nagyobb mint 24 MB.
+
+---
