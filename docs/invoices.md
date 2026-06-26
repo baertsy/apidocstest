@@ -95,9 +95,9 @@ Specifikációk:
 
 ---
 
-# Számlák keresése
+## Számlák keresése
 
-## Számla részletes adatai
+### Számla részletes adatai
 
 Ez a végpont egy megadott számlára keres, és visszaadja a számla összes részletét.
 
@@ -170,7 +170,7 @@ A rendszer a számla részleteivel válaszol:
 
 ---
 
-# Számlalista végpont
+## Számlalista végpont
 
 A lenti kérés használatával API-n keresztül lekérheted a kiállított számláid listáját. Fontos: a lista nem tartalmazza azokat a számlákat, amelyek nincsenek kiállítva.
 
@@ -218,9 +218,9 @@ Megjegyzés: a Stock végpontnál külön is szerepel, hogy az `Invoice/List`, `
 
 ---
 
-# Számla frissítése
+## Számla frissítése
 
-## Számla fizetettre jelölése
+### Számla fizetettre jelölése
 
 Ezzel a végponttal lehetőség van a számla státuszát `Paid` értékre állítani.
 
@@ -312,7 +312,7 @@ Amikor egy számla fizetettre van jelölve, a rendszer válasza a számlaadatlap
 
 ---
 
-## Számla sztornózása
+### Számla sztornózása
 
 Ezzel a végponttal a felhasználó sztornózhat egy adott számlát.
 
@@ -389,7 +389,7 @@ A válasz a sztornózott számla részleteit tartalmazza:
 
 ---
 
-## Egyedi mezők szerkesztése — számlaadatlap mezői
+### Egyedi mezők szerkesztése — számlaadatlap mezői
 
 Ez a végpont lehetővé teszi a felhasználó számára a számlaadatlapon található egyedi mezők kitöltését vagy módosítását.
 
