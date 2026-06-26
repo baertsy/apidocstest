@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/address/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/address/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/address/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/calllog/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/calllog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/calllog/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/card_connection/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/card_connection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/card_connection/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/contacts/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/contacts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/contacts/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/info/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/info/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/info/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/integration_options/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/integration_options/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/integration_options/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/invoices/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/invoices/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/invoices/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/offers/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/offers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/offers/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/orders/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/orders/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/orders/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/products/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/products/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/products/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/projects/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/projects/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/projects/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/requirements/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/requirements/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/requirements/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/signup/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/signup/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/signup/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/templates/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/templates/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/templates/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/todo/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/todo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/todo/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/address/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/address/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/address/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/calllog/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/calllog/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/calllog/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/card_connection/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/card_connection/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/card_connection/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/contacts/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/contacts/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/contacts/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/info/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/info/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/info/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/integration_options/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/integration_options/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/integration_options/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/invoices/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/invoices/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/invoices/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/offers/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/offers/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/offers/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/orders/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/orders/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/orders/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/products/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/products/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/products/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/projects/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/projects/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/projects/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/requirements/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/requirements/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/requirements/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/signup/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/signup/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/signup/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/templates/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/templates/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/templates/"/>
+    </url>
+    <url>
+        <loc>https://baertsy.github.io/apidocstest/en/todo/</loc>
+        <lastmod>2026-06-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://baertsy.github.io/apidocstest/en/todo/"/>
+        <xhtml:link rel="alternate" hreflang="hu" href="https://baertsy.github.io/apidocstest/todo/"/>
+    </url>
+</urlset>

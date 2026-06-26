@@ -1,0 +1,1385 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/en/offers/">
+      
+      
+        <link rel="prev" href="../orders/">
+      
+      
+        <link rel="next" href="../invoices/">
+      
+      
+        
+          <link rel="alternate" href="../../offers/" hreflang="hu">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ajánlatok - MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#offer-endpoint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ajánlatok
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../offers/" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration_options/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contacts/" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-issuing-offers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating and issuing offers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-for-offers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for offers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search for offers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-data-of-an-offer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed data of an offer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offer-list-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offer list endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-offer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update offer data
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-and-issuing-offers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating and issuing offers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-for-offers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for offers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search for offers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-data-of-an-offer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed data of an offer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offer-list-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offer list endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-offer-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update offer data
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="offer-endpoint">Offer endpoint</h1>
+<p>On this endpoint, you have the ability to manage your offers in MiniCRM. You can create an API request to send the offer into the system in JSON-encoded format or in an XML file.</p>
+<p>Via this endpoint, you will be able to:</p>
+<ul>
+<li>create an offer in your system</li>
+<li>change the status of the offer</li>
+<li>modify or add information to the card fields</li>
+</ul>
+<hr />
+<h2 id="creating-and-issuing-offers">Creating and issuing offers</h2>
+<p>In the case of offers, the system can process a request with a structure similar to the response you receive when retrieving offers. The function can be used with a <code>POST</code> request. The data can be processed by the system in JSON-encoded format. In the case of offers, <code>CustomerId</code> and <code>ReferenceId</code> are mandatory information.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/Offer</code></li>
+<li>HTTP method: <code>POST</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<p>For customers, the billing address will be used. If there is no such address, then the default address will be used on the offers. The use of the <code>Customer</code> block within the request is optional; here you can provide the customer's data. If the address already exists among the contact information, we will use it; if not, it will be saved as a new — default — billing address.</p>
+<p>The VAT number and bank account number will be overwritten by the API. Offers will be created in the first, default status, which is: <code>Preparing offer</code>.</p>
+<p>Authentication is mandatory in the request. <code>CustomerId</code> or <code>ReferenceId</code> must be provided. Editing the <code>CurrencyCode</code> variable is not allowed; it must be submitted with a <code>POST</code> request when creating the offer.</p>
+<p>Example request:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPOST &quot;http://r3.minicrm.hu/Api/Offer/&quot; -d '
+{
+    &quot;CustomerId&quot;: &quot;20404&quot;,
+    &quot;InvoicePadCounter&quot;: &quot;00005&quot;,
+    &quot;Number&quot;: &quot;2024-E/00001&quot;,
+    &quot;Type&quot;: &quot;Offer&quot;,
+    &quot;Media&quot;: &quot;PKI&quot;,
+    &quot;Language&quot;: &quot;RO&quot;,
+    &quot;Customer&quot;: {
+        &quot;Name&quot;: &quot;John Doe&quot;,
+        &quot;CountryId&quot;: &quot;40&quot;,
+        &quot;Country&quot;: &quot;Romania&quot;,
+        &quot;PostalCode&quot;: &quot;000000&quot;,
+        &quot;City&quot;: &quot;Test&quot;,
+        &quot;Address&quot;: &quot;Test Address&quot;,
+        &quot;AccountNumber&quot;: &quot;&quot;,
+        &quot;VatNumber&quot;: &quot;&quot;,
+        &quot;EUVatNumber&quot;: &quot;&quot;,
+        &quot;RegistrationNumber&quot;: &quot;&quot;,
+        &quot;GroupIdentificationNumber&quot;: &quot;&quot;
+    },
+    &quot;Vendor&quot;: {
+        &quot;Name&quot;: &quot;John Doe&quot;,
+        &quot;CountryId&quot;: &quot;40&quot;,
+        &quot;PostalCode&quot;: &quot;000000&quot;,
+        &quot;City&quot;: &quot;Test&quot;,
+        &quot;Address&quot;: &quot;John Doe Street, no. 1&quot;,
+        &quot;AccountNumber&quot;: &quot;&quot;,
+        &quot;IBAN&quot;: &quot;&quot;,
+        &quot;SWIFT&quot;: &quot;&quot;,
+        &quot;VatNumber&quot;: &quot;XXXXXX&quot;,
+        &quot;EUVatNumber&quot;: &quot;ROXXXXXX&quot;,
+        &quot;GroupIdentificationNumber&quot;: &quot;&quot;,
+        &quot;RegistrationNumber&quot;: &quot;&quot;
+    },
+    &quot;ExtraData&quot;: &quot;&quot;,
+    &quot;Subject&quot;: &quot;&quot;,
+    &quot;PaymentMethod&quot;: &quot;WiredTransfer&quot;,
+    &quot;Issued&quot;: &quot;2024-01-01&quot;,
+    &quot;Performance&quot;: &quot;2024-01-08&quot;,
+    &quot;Prompt&quot;: &quot;2024-01-08&quot;,
+    &quot;Paid&quot;: &quot;&quot;,
+    &quot;CurrencyCode&quot;: &quot;RON&quot;,
+    &quot;ConversionRate&quot;: &quot;&quot;,
+    &quot;AmountNet&quot;: &quot;23.00&quot;,
+    &quot;AmountVat&quot;: &quot;0.00&quot;,
+    &quot;Amount&quot;: &quot;23.00&quot;,
+    &quot;VATMode&quot;: &quot;NormalVAT&quot;,
+    &quot;Accounting&quot;: &quot;Normal&quot;,
+    &quot;DocumentId&quot;: &quot;6&quot;,
+    &quot;DocumentUrl&quot;:
+&quot;https://r3-test.minicrm.eu/documents/XYZ/Download/S3/?t=doc&amp;inline=0&amp;e=XYZ&quot;,
+    &quot;Items&quot;: [
+        {
+            &quot;SKU&quot;: &quot;&quot;,
+            &quot;EAN&quot;: &quot;&quot;,
+            &quot;Name&quot;: &quot;Test&quot;,
+            &quot;Description&quot;: &quot;&quot;,
+            &quot;PriceNet&quot;: &quot;23.0000&quot;,
+            &quot;Quantity&quot;: &quot;1.00&quot;,
+            &quot;Unit&quot;: &quot;piece&quot;,
+            &quot;PriceNetTotal&quot;: &quot;23&quot;,
+            &quot;VAT&quot;: &quot;19&quot;,
+            &quot;VATSubtype&quot;: &quot;&quot;,
+            &quot;PriceTotal&quot;: &quot;23.00&quot;
+        }
+    ],
+    &quot;Project&quot;: {
+        &quot;String1911&quot;: &quot;Test&quot;
+    }
+}'
+</code></pre>
+<p>The API response contains comprehensive order data, including the unique order identifier. This response is also extended with dynamically calculated fields, such as <code>AmountVat</code> and <code>Amount Net</code>. The structure of the response is the same as the structure of the “Retrieve an order” response.</p>
+<hr />
+<h2 id="search-for-offers">Search for offers</h2>
+<h3 id="detailed-data-of-an-offer">Detailed data of an offer</h3>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/Offer/OfferId</code></li>
+<li>Parameter: <code>OfferId</code></li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/Offer/932&quot;
+</code></pre>
+<pre><code class="language-json">{
+    &quot;Id&quot;: &quot;932&quot;,
+    &quot;InvoicePadCounter&quot;: &quot;00008&quot;,
+    &quot;Number&quot;: &quot;AJ2021-E/00008&quot;,
+    &quot;Type&quot;: &quot;Offer&quot;,
+    &quot;InvoiceMode&quot;: &quot;Normal&quot;,
+    &quot;Media&quot;: &quot;PKI&quot;,
+    &quot;Language&quot;: &quot;HU&quot;,
+    &quot;Customer&quot;: {
+      &quot;Name&quot;: &quot;John Doe&quot;,
+      &quot;CountryId&quot;: &quot;36&quot;,
+      &quot;County&quot;: &quot;&quot;,
+      &quot;PostalCode&quot;: &quot;XXXX&quot;,
+      &quot;City&quot;: &quot;Budapest&quot;,
+      &quot;Address&quot;: &quot;XXX&quot;,
+      &quot;AccountNumber&quot;: &quot;&quot;,
+      &quot;VatNumber&quot;: &quot;&quot;,
+      &quot;EUVatNumber&quot;: &quot;&quot;,
+      &quot;RegistrationNumber&quot;: &quot;&quot;,
+      &quot;GroupIdentificationNumber&quot;: &quot;&quot;
+    },
+    &quot;Vendor&quot;: {
+      &quot;Name&quot;: &quot;John Doe INC&quot;,
+      &quot;CountryId&quot;: &quot;36&quot;,
+      &quot;PostalCode&quot;: &quot;XXXX&quot;,
+      &quot;City&quot;: &quot;XXX&quot;,
+      &quot;Address&quot;: &quot;XXX&quot;,
+      &quot;AccountNumber&quot;: &quot;XXXXXXXXXXXXXXXXXXXXX&quot;,
+      &quot;IBAN&quot;: &quot;XXXXXXXXXXXXXXXXXXXXX&quot;,
+      &quot;SWIFT&quot;: &quot;XXXXXXXX&quot;,
+      &quot;VatNumber&quot;: &quot;XXXXXXXXX&quot;,
+      &quot;EUVatNumber&quot;: &quot;XXXXXXXX&quot;,
+      &quot;GroupIdentificationNumber&quot;: &quot;&quot;,
+      &quot;RegistrationNumber&quot;: &quot;&quot;
+    },
+    &quot;ExtraData&quot;: &quot;{\&quot;VendorMiscellaneous\&quot;:\&quot;XXXXXXXX\&quot;}&quot;,
+    &quot;Subject&quot;: &quot;&quot;,
+    &quot;PaymentMethod&quot;: &quot;WiredTransfer&quot;,
+    &quot;Issued&quot;: &quot;2021-10-15&quot;,
+    &quot;Performance&quot;: &quot;2021-10-15&quot;,
+    &quot;Prompt&quot;: &quot;2021-10-15&quot;,
+    &quot;Paid&quot;: &quot;&quot;,
+    &quot;CurrencyCode&quot;: &quot;HUF&quot;,
+    &quot;ConversionRate&quot;: &quot;&quot;,
+    &quot;AmountNet&quot;: &quot;23&quot;,
+    &quot;AmountVat&quot;: &quot;0&quot;,
+    &quot;Amount&quot;: &quot;23&quot;,
+    &quot;VATMode&quot;: &quot;VATExempt&quot;,
+    &quot;Accounting&quot;: &quot;Normal&quot;,
+    &quot;DocumentId&quot;: &quot;819&quot;,
+    &quot;DocumentUrl&quot;:
+&quot;https://r3.minicrm.hu/41274/Download/S3/?t=doc&amp;inline=0&amp;e=XXXXXXXXXX&quot;,
+    &quot;Items&quot;: [
+       {
+          &quot;Id&quot;: &quot;1306&quot;,
+          &quot;SKU&quot;: &quot;&quot;,
+          &quot;EAN&quot;: &quot;&quot;,
+          &quot;Name&quot;: &quot;testr&quot;,
+          &quot;Description&quot;: &quot;&quot;,
+          &quot;PriceNet&quot;: &quot;23.0000&quot;,
+          &quot;Quantity&quot;: &quot;1.00&quot;,
+          &quot;Unit&quot;: &quot;darab&quot;,
+          &quot;PriceNetTotal&quot;: &quot;23&quot;,
+          &quot;PriceTotal&quot;: &quot;23&quot;
+       }
+    ],
+    &quot;Project&quot;: {
+       &quot;Enum1907&quot;: &quot;&quot;,
+       &quot;Float1910&quot;: &quot;&quot;,
+       &quot;Int1909&quot;: &quot;&quot;,
+       &quot;Int1912&quot;: &quot;&quot;,
+       &quot;String1911&quot;: &quot;TEST&quot;,
+       &quot;String1913&quot;: &quot;&quot;,
+       &quot;String1914&quot;: &quot;&quot;,
+       &quot;String1915&quot;: &quot;&quot;,
+       &quot;StatusId&quot;: &quot;3426&quot;
+    }
+}
+</code></pre>
+<hr />
+<h2 id="offer-list-endpoint">Offer list endpoint</h2>
+<p>Using the request below, you can retrieve the list of your created offers via API. The listing returns 100 results. Pagination can be done using the <code>Page</code> parameter; see more details in the Pagination chapter.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/Offer/List</code></li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-text">https://r3.minicrm.hu/Api/Offer/List
+</code></pre>
+<p>Example response:</p>
+<pre><code class="language-json">{
+    &quot;Count&quot;: 12,
+    &quot;Results&quot;: {
+      &quot;9&quot;: {
+        &quot;Id&quot;: &quot;9&quot;,
+        &quot;ProjectId&quot;: &quot;264&quot;,
+        &quot;StornedId&quot;: &quot;&quot;,
+        &quot;Number&quot;: &quot;AJ2022-E/00001&quot;,
+        &quot;Type&quot;: &quot;Offer&quot;,
+        &quot;Issued&quot;: &quot;2022-04-14&quot;,
+        &quot;Performance&quot;: &quot;2022-02-03&quot;,
+        &quot;Prompt&quot;: &quot;2022-02-03&quot;,
+        &quot;Paid&quot;: &quot;&quot;,
+        &quot;CurrencyCode&quot;: &quot;EUR&quot;,
+        &quot;AmountNet&quot;: &quot;678.0000&quot;,
+        &quot;AmountVat&quot;: &quot;183.0000&quot;,
+        &quot;Amount&quot;: &quot;862.0000&quot;,
+        &quot;Status&quot;: &quot;Accepted&quot;,
+        &quot;StatusGroup&quot;: &quot;Success&quot;,
+        &quot;DocumentUrl&quot;: &quot;&quot;
+      }
+    }
+}
+</code></pre>
+<p>Note: The Stock endpoint states that <code>Offer/List</code> is a special endpoint for listing documents. According to <code>Company Policies v2</code>, the offer list also lists offers that have not been issued.</p>
+<hr />
+<h2 id="update-offer-data">Update offer data</h2>
+<p>Complete modification of an offer is restricted to instances in <code>Draft</code> status, and such edits must be initiated exclusively from within your system. In contrast, when the offer is created in the system, you can still flexibly modify the items, the opportunity card fields, and issue modified offers without having to create an entirely new offer from the beginning.</p>
+<p>It is important to note that certain operations, including the following, cannot be performed using API requests:</p>
+<ul>
+<li>changing the owner of the opportunity card — offer</li>
+<li>deleting an item</li>
+<li>modifying an item</li>
+<li>adding a new item</li>
+</ul>
+<p>Structure:</p>
+<pre><code class="language-json">{
+&quot;FieldName&quot;: &quot;Value&quot;
+}
+</code></pre>
+<p>Example request:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -POST &quot;https://r3.minicrm.hu/Api/Offer/10/Project&quot;
+-d '
+{
+&quot;StatusId&quot;: &quot;Paid&quot;,
+&quot;String1616&quot;: &quot;Test&quot;
+}'
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

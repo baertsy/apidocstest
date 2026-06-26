@@ -1,0 +1,1817 @@
+
+<!doctype html>
+<html lang="hu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/contacts/">
+      
+      
+        <link rel="prev" href="../requirements/">
+      
+      
+        <link rel="next" href="../address/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="hu">
+        
+          <link rel="alternate" href="../en/contacts/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Cégek és Kapcsolatok - MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ceg-kapcsolattarto-vegpont" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cégek és Kapcsolatok
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Nyelvváltás">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/contacts/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration_options/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uj-ceg-kapcsolattarto-adatlap-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új cég / kapcsolattartó adatlap létrehozása
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Új cég / kapcsolattartó adatlap létrehozása">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uj-ceg-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új cég létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uj-kapcsolattarto-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új kapcsolattartó létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cegek-kapcsolattartok-keresese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cégek / kapcsolattartók keresése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cégek / kapcsolattartók keresése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kereses-nev-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés név alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-e-mail-cim-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés e-mail-cím alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-telefonszam-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés telefonszám alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-frissitesi-datum-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés frissítési dátum alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-megadott-kulcsszo-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés megadott kulcsszó alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-megadott-mezo-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés megadott mező alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#egy-ceg-osszes-kapcsolattartojanak-lekerese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egy cég összes kapcsolattartójának lekérése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kapcsolattarto-ceg-reszletes-adatai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kapcsolattartó / cég részletes adatai
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cegek-kapcsolattartok-adatainak-frissitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cégek / kapcsolattartók adatainak frissítése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kapcsolattarto-torlese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kapcsolattartó törlése
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uj-ceg-kapcsolattarto-adatlap-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új cég / kapcsolattartó adatlap létrehozása
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Új cég / kapcsolattartó adatlap létrehozása">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uj-ceg-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új cég létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uj-kapcsolattarto-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új kapcsolattartó létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cegek-kapcsolattartok-keresese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cégek / kapcsolattartók keresése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cégek / kapcsolattartók keresése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kereses-nev-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés név alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-e-mail-cim-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés e-mail-cím alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-telefonszam-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés telefonszám alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-frissitesi-datum-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés frissítési dátum alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-megadott-kulcsszo-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés megadott kulcsszó alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kereses-megadott-mezo-alapjan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keresés megadott mező alapján
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#egy-ceg-osszes-kapcsolattartojanak-lekerese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egy cég összes kapcsolattartójának lekérése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kapcsolattarto-ceg-reszletes-adatai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kapcsolattartó / cég részletes adatai
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cegek-kapcsolattartok-adatainak-frissitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cégek / kapcsolattartók adatainak frissítése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kapcsolattarto-torlese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kapcsolattartó törlése
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ceg-kapcsolattarto-vegpont">Cég / kapcsolattartó végpont</h1>
+<p>Először meg kell különböztetnünk a kapcsolattartókat a cégektől. Egy céghez több kapcsolattartó is hozzárendelhető, míg egy kapcsolattartó egy időben csak egy céghez rendelhető hozzá.</p>
+<p>Másrészt az adatlapok hozzárendelhetők kapcsolattartóhoz vagy céghez is, de kapcsolattartó nélkül. Ha egy céghez legalább egy kapcsolattartó tartozik, akkor a létrehozandó adatlapot ehhez a kapcsolattartóhoz kell hozzárendelni.</p>
+<p>A MiniCRM-ben a cégek, kapcsolattartók és adatlapok közötti hierarchia az alábbi ábra szerint épül fel:</p>
+<p>Tehát az adatlapok egy kapcsolattartóhoz vannak rendelve, egy kapcsolattartó pedig egy céghez van rendelve. Előfordulhatnak speciális esetek, amikor az adatlap közvetlenül egy céghez van rendelve, de ez nem a leghelyesebb működési mód, ezért integrációkban mindig arra kell törekedni, hogy az adatlapok kapcsolattartókhoz, a kapcsolattartók pedig cégekhez legyenek rendelve.</p>
+<hr />
+<h2 id="uj-ceg-kapcsolattarto-adatlap-letrehozasa">Új cég / kapcsolattartó adatlap létrehozása</h2>
+<p>Új cég vagy új kapcsolattartó létrehozásához a következőkre van szükség:</p>
+<ul>
+<li>JSON kódolású kérés küldése <code>PUT</code> metódussal az adatok beállításához</li>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>HTTP metódus: <code>PUT</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>Új cég vagy kapcsolattartó létrehozásakor meg kell adni az adatlap típusát:</p>
+<ul>
+<li><code>Business</code> - cégek esetén</li>
+<li><code>Person</code> - kapcsolattartók esetén</li>
+</ul>
+<p>Ha egy kapcsolattartót egy meglévő céghez szeretnél rendelni, akkor a <code>BusinessId</code> paramétert kell használni.</p>
+<hr />
+<h3 id="uj-ceg-letrehozasa">Új cég létrehozása</h3>
+<p>Új cég létrehozásához a cég neve kötelező:</p>
+<pre><code class="language-bash">$ curl -XPUT --user $SystemId:$ApiKey https://r3.minicrm.hu/Api/R3/Contact -d '{
+    &quot;Name&quot;: &quot;Company Name Here&quot;,
+    &quot;Type&quot;: &quot;Business&quot;,
+    ...
+}'
+</code></pre>
+<p>Siker esetén a rendszer az újonnan létrehozott cég azonosítójával válaszol:</p>
+<pre><code class="language-json">{
+    &quot;Id&quot;:12345
+}
+</code></pre>
+<hr />
+<h3 id="uj-kapcsolattarto-letrehozasa">Új kapcsolattartó létrehozása</h3>
+<p>Kapcsolattartó esetén legalább a keresztnév vagy a vezetéknév megadása kötelező:</p>
+<pre><code class="language-bash">$ curl -XPUT --user $SystemId:$APIKey https://r3.minicrm.hu/Api/R3/Contact -d '
+{
+       &quot;FirstName&quot;: &quot;ContactFirstName&quot;,
+       &quot;LastName&quot;: &quot;ContactLastName&quot;,
+       &quot;BusinessId&quot;: 1234, - OPTIONAL (please check the details above)
+       &quot;Type&quot;: &quot;Person&quot;,
+       ...
+}'
+</code></pre>
+<p>Siker esetén a rendszer az újonnan létrehozott kapcsolattartó azonosítójával válaszol:</p>
+<pre><code class="language-json">{
+    &quot;Id&quot;:12345
+}
+</code></pre>
+<hr />
+<h2 id="cegek-kapcsolattartok-keresese">Cégek / kapcsolattartók keresése</h2>
+<h3 id="kereses-nev-alapjan">Keresés név alapján</h3>
+<p>Ez a végpont a megadott cég- vagy kapcsolattartónévre keres, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.</p>
+<p>A cégeket és a kapcsolattartókat a <code>type</code> paraméter alapján lehet megkülönböztetni.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>Name</code> — cég / kapcsolattartó neve; részleges név is megadható</li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Name=Name&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol. Ebben a példában cégadatok szerepelnek:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Name=John Doe Ltd&quot;
+</code></pre>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 1,
+      &quot;Results&quot;: {
+           &quot;37146&quot;: {
+               &quot;Id&quot;: 36721,
+               &quot;Name&quot;: &quot;John Doe Ltd&quot;,
+               &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/36721&quot;,
+               &quot;Type&quot;: &quot;Business&quot;,
+               &quot;Email&quot;: &quot;contact@example.com&quot;,
+               &quot;Phone&quot;: &quot;+40000000000&quot;
+           }
+      }
+}
+</code></pre>
+<p>Példa kapcsolattartó — személy — adataira:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Name=John Doe&quot;
+</code></pre>
+<pre><code class="language-json">{
+     &quot;Count&quot;: 1,
+     &quot;Results&quot;: {
+         &quot;37147&quot;: {
+             &quot;Id&quot;: 37147,
+             &quot;Name&quot;: &quot;John Doe&quot;,
+             &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+             &quot;Type&quot;: &quot;Person&quot;,
+             &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+             &quot;Phone&quot;: &quot;&quot;,
+             &quot;BusinessId&quot;: 37146
+         }
+     }
+}
+</code></pre>
+<hr />
+<h3 id="kereses-e-mail-cim-alapjan">Keresés e-mail-cím alapján</h3>
+<p>Ez a végpont a megadott cég- vagy kapcsolattartói e-mail-címre keres, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.</p>
+<p>A cégeket és a kapcsolattartókat a <code>type</code> paraméter alapján lehet megkülönböztetni.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>Email</code> — cég / kapcsolattartó e-mail-címe</li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Email=Email&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Email=john.doe@test.com&quot;
+</code></pre>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 1,
+      &quot;Results&quot;: {
+          &quot;37147&quot;: {
+              &quot;Id&quot;: 37147,
+              &quot;Name&quot;: &quot;John Doe&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;john.doe@test.com&quot;,
+              &quot;Phone&quot;: &quot;&quot;,
+              &quot;BusinessId&quot;: 37146
+          }
+      }
+}
+</code></pre>
+<hr />
+<h3 id="kereses-telefonszam-alapjan">Keresés telefonszám alapján</h3>
+<p>Ez a végpont a megadott cég- vagy kapcsolattartói telefonszámra keres, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.</p>
+<p>A cégeket és a kapcsolattartókat a <code>type</code> paraméter alapján lehet megkülönböztetni.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>Phone</code> — cég / kapcsolattartó telefonszáma</li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Phone=Phone&quot;
+</code></pre>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Phone=+40000000000&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 2,
+      &quot;Results&quot;: {
+          &quot;37146&quot;: {
+              &quot;Id&quot;: 37146,
+              &quot;Name&quot;: &quot;John Doe Inc.&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37146&quot;,
+              &quot;Type&quot;: &quot;Business&quot;,
+              &quot;Email&quot;: &quot;&quot;,
+              &quot;Phone&quot;: &quot;+40000000000&quot;
+          },
+          &quot;37147&quot;: {
+              &quot;Id&quot;: 37147,
+              &quot;Name&quot;: &quot;John Doe&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000000&quot;,
+              &quot;BusinessId&quot;: 37146
+          }
+      }
+}
+</code></pre>
+<hr />
+<h3 id="kereses-frissitesi-datum-alapjan">Keresés frissítési dátum alapján</h3>
+<p>Ez a végpont olyan megadott cégekre / kapcsolattartókra keres, amelyek egy adott dátumon frissültek, és visszaadja az összes olyan céget és/vagy kapcsolattartót, amely megfelel a keresési paraméternek.</p>
+<p>A cégeket és a kapcsolattartókat a <code>type</code> paraméter alapján lehet megkülönböztetni.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>UpdatedSince</code> — cég / kapcsolattartó telefonszáma. Használható formátum: <code>2023-03-24+10:30:00</code>; a magyar időzónát kell használni.</li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?UpdatedSince=UpdatedSince&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?UpdatedSince=2023-03-24+10:30:00&quot;
+</code></pre>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 2,
+      &quot;Results&quot;: {
+            &quot;37146&quot;: {
+                &quot;Id&quot;: 37146,
+                &quot;Name&quot;: &quot;John Doe Inc.&quot;,
+                &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37146&quot;,
+                &quot;Type&quot;: &quot;Business&quot;,
+                &quot;Email&quot;: &quot;&quot;,
+                &quot;Phone&quot;: &quot;+40000000000&quot;
+            },
+            &quot;37147&quot;: {
+                &quot;Id&quot;: 37147,
+                &quot;Name&quot;: &quot;John Doe&quot;,
+                &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+                &quot;Type&quot;: &quot;Person&quot;,
+                &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+                &quot;Phone&quot;: &quot;+40000000000&quot;,
+                &quot;BusinessId&quot;: 37146
+            }
+      }
+}
+</code></pre>
+<hr />
+<h3 id="kereses-megadott-kulcsszo-alapjan">Keresés megadott kulcsszó alapján</h3>
+<p>Ez a végpont a megadott kulcsszóra keres a cég / kapcsolattartó adatlap minden szöveges mezőjében. A rendszer csak azokat az eredményeket adja vissza, amelyek a teljes kulcsszóra illeszkednek, és nem számít, hogy a kulcsszót kisbetűvel, nagybetűvel vagy ékezetes betűkkel írod-e be.</p>
+<p>A cégeket és a kapcsolattartókat a <code>type</code> paraméter alapján lehet megkülönböztetni.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>Query</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Query=Query&quot;
+</code></pre>
+<p>Kérjük, ellenőrizd az alábbi kimenet piros színű szövegét.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?Query=mc&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 2,
+      &quot;Results&quot;: {
+          &quot;36590&quot;: {
+              &quot;Id&quot;: 36590,
+              &quot;Name&quot;: &quot;Test contact&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/36590&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;john.doe+mc@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000000&quot;,
+              &quot;BusinessId&quot;: 275
+          },
+          &quot;37147&quot;: {
+              &quot;Id&quot;: 37147,
+              &quot;Name&quot;: &quot;John (MC) Doe (MC)&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000000&quot;,
+              &quot;BusinessId&quot;: 37146
+          }
+      }
+}
+</code></pre>
+<hr />
+<h3 id="kereses-megadott-mezo-alapjan">Keresés megadott mező alapján</h3>
+<p>Ez a végpont a cég / kapcsolattartó adatlapon lévő megadott mezőben keres megadott értékre. Megadott mező alatt itt azokat a mezőket értjük, amelyeket a felhasználók adtak hozzá és állítottak be az adatlapokon.</p>
+<p>A cégeket és a kapcsolattartókat a <code>type</code> paraméter alapján lehet megkülönböztetni.</p>
+<p>Újra elolvashatod azt a fejezetet, ahol elmagyaráztuk, hogyan lehet lekérni az egyedi mezők neveit.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>FieldName</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?FieldName=FieldName&quot;
+</code></pre>
+<p>Ebben a példában feltételezzük, hogy van egy <code>TestCardContact</code> nevű mező a MiniCRM rendszeremben, a kapcsolattartó adatlapon, amely véletlenszerű szöveget tartalmaz, és meg szeretném keresni az összes olyan kapcsolattartót, amelynél ebben a mezőben szerepel egy adott szöveg.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?TestCardContact=test&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 3,
+      &quot;Results&quot;: {
+          &quot;44&quot;: {
+              &quot;Id&quot;: 44,
+              &quot;Name&quot;: &quot;Test John Doe&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/44&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000001&quot;,
+              &quot;BusinessId&quot;: 275
+          },
+          &quot;37542&quot;: {
+              &quot;Id&quot;: 37542,
+              &quot;Name&quot;: &quot;Test Jane Smith&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37542&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;&quot;,
+              &quot;Phone&quot;: &quot;&quot;
+          },
+          &quot;37147&quot;: {
+              &quot;Id&quot;: 37147,
+              &quot;Name&quot;: &quot;Test Mike Johnson&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;mike.johnson@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000002&quot;,
+              &quot;BusinessId&quot;: 37146
+          }
+      }
+}
+</code></pre>
+<hr />
+<h2 id="egy-ceg-osszes-kapcsolattartojanak-lekerese">Egy cég összes kapcsolattartójának lekérése</h2>
+<p>Ez a végpont összeállítja egy megadott céghez társított összes kapcsolattartó listáját.</p>
+<p>A rendszer az eredmények között a cég adatait is visszaadja.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>MainContactId</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?MainContactId=MainContactId&quot;
+</code></pre>
+<p>Példa:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact?MainContactId=37146&quot;
+</code></pre>
+<p>A rendszer a cég / kapcsolattartó adataival válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 3,
+      &quot;Results&quot;: {
+          &quot;44&quot;: {
+              &quot;Id&quot;: 44,
+              &quot;Name&quot;: &quot;John Doe&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/44&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000001&quot;,
+              &quot;BusinessId&quot;: 275
+          },
+          &quot;37147&quot;: {
+              &quot;Id&quot;: 37147,
+              &quot;Name&quot;: &quot;Mike Johnson&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;,
+              &quot;Type&quot;: &quot;Person&quot;,
+              &quot;Email&quot;: &quot;mike.johnson@example.com&quot;,
+              &quot;Phone&quot;: &quot;+40000000002&quot;,
+              &quot;BusinessId&quot;: 37146
+          }
+      }
+}
+</code></pre>
+<hr />
+<h2 id="kapcsolattarto-ceg-reszletes-adatai">Kapcsolattartó / cég részletes adatai</h2>
+<p>Ez a végpont a kapcsolattartó vagy cég azonosítója alapján visszaadja az adott kapcsolattartó vagy cég részletes adatait.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact</code></li>
+<li>Paraméter: <code>Id</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact/$Id&quot;
+</code></pre>
+<p>Példa:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact/37146&quot;
+</code></pre>
+<p>Rendszerválasz cég esetén:</p>
+<pre><code class="language-json">{
+      &quot;Id&quot;: 37146,
+      &quot;Type&quot;: &quot;Business&quot;,
+      &quot;Name&quot;: &quot;ABC Corporation&quot;,
+      &quot;Email&quot;: &quot;&quot;,
+      &quot;Phone&quot;: &quot;+40 0000 0000&quot;,
+      &quot;Description&quot;: &quot;&quot;,
+      &quot;Deleted&quot;: 0,
+      &quot;CreatedBy&quot;: &quot;John Doe&quot;,
+      &quot;CreatedAt&quot;: &quot;2022-08-25 12:18:49&quot;,
+      &quot;UpdatedBy&quot;: &quot;John Doe&quot;,
+      &quot;UpdatedAt&quot;: &quot;2023-03-30 09:29:55&quot;,
+      &quot;Url&quot;: &quot;https://www.example.com&quot;,
+      &quot;BankAccount&quot;: &quot;&quot;,
+      &quot;Swift&quot;: &quot;&quot;,
+      &quot;RegistrationNumber&quot;: &quot;&quot;,
+      &quot;VatNumber&quot;: &quot;&quot;,
+      &quot;Industry&quot;: &quot;&quot;,
+      &quot;Region&quot;: &quot;&quot;,
+      &quot;Employees&quot;: 0,
+      &quot;YearlyRevenue&quot;: 0,
+      &quot;EUVatNumber&quot;: &quot;&quot;,
+      &quot;FoundingYear&quot;: 0,
+      &quot;Capital&quot;: 0,
+      &quot;MainActivity&quot;: &quot;&quot;,
+      &quot;BisnodeTrafficLight&quot;: &quot;&quot;,
+      &quot;NonGovernmentalOrganization&quot;: &quot;No&quot;,
+      &quot;Tags&quot;: []
+}
+</code></pre>
+<p>Rendszerválasz személy esetén:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot;
+</code></pre>
+<pre><code class="language-json">{
+     &quot;Id&quot;: 37147,
+     &quot;Type&quot;: &quot;Person&quot;,
+     &quot;FirstName&quot;: &quot;John&quot;,
+     &quot;LastName&quot;: &quot;Doe&quot;,
+     &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+     &quot;Phone&quot;: &quot;+40 0000 0000&quot;,
+     &quot;Description&quot;: &quot;&quot;,
+     &quot;Deleted&quot;: 0,
+     &quot;CreatedBy&quot;: &quot;John Doe&quot;,
+     &quot;CreatedAt&quot;: &quot;2022-08-25 12:18:49&quot;,
+     &quot;UpdatedBy&quot;: &quot;John Doe&quot;,
+     &quot;UpdatedAt&quot;: &quot;2023-04-05 09:56:10&quot;,
+     &quot;Url&quot;: &quot;&quot;,
+     &quot;BankAccount&quot;: &quot;&quot;,
+     &quot;Swift&quot;: &quot;&quot;,
+     &quot;VatNumber&quot;: &quot;&quot;,
+     &quot;Position&quot;: &quot;&quot;,
+     &quot;Industry&quot;: &quot;&quot;,
+     &quot;Region&quot;: &quot;&quot;,
+     &quot;YearlyRevenue&quot;: 0,
+     &quot;DataManagement_Consent&quot;: &quot;&quot;,
+     &quot;TestCardContact&quot;: &quot;Another test sample text&quot;,
+     &quot;BusinessId&quot;: 37146,
+     &quot;Tags&quot;: []
+}
+</code></pre>
+<hr />
+<h2 id="cegek-kapcsolattartok-adatainak-frissitese">Cégek / kapcsolattartók adatainak frissítése</h2>
+<p>Ez a végpont lehetővé teszi egy megadott cég vagy kapcsolattartó adatainak frissítését.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/Contact/Id</code></li>
+<li>Paraméter: <code>Id</code></li>
+<li>HTTP metódus: <code>PUT</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki cég frissítése esetén:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/Contact/37147&quot; -d '{
+      &quot;Email&quot;: &quot;suport@example.com&quot;
+}'
+</code></pre>
+<p>A kérés URL-je például így néz ki személy frissítése esetén:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT https://r3.minicrm.hu/Api/R3/Contact/37147 -d '{
+   &quot;FirstName&quot;:&quot;John&quot;,
+   &quot;LastName&quot;:&quot;Doe&quot;
+}'
+</code></pre>
+<p>Sikeres frissítés esetén a rendszer az adott cég / kapcsolattartó azonosítójával válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Id&quot;: 37146
+}
+</code></pre>
+<hr />
+<h2 id="kapcsolattarto-torlese">Kapcsolattartó törlése</h2>
+<p>Egy kapcsolattartó csak akkor törölhető, ha nincs elsődleges kapcsolattartóként beállítva egyetlen adatlapon sem.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/PurgePerson/ContactId</code></li>
+<li>Paraméter: <code>ContactId</code></li>
+<li>HTTP metódus: <code>PUT</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/PurgePerson/37148&quot;
+</code></pre>
+<p>Siker esetén a rendszer sikeres üzenettel válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Message&quot;: &quot;Successfully deleted&quot;
+}
+</code></pre>
+<p>Hiba esetén a rendszer hasznos üzenettel válaszol:</p>
+<pre><code class="language-json">{
+      &quot;Message&quot;: &quot;The person is marked as the main contact on one or more cards.&quot;
+}
+</code></pre>
+<p>Cégek ezzel a módszerrel nem törölhetők.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1483 @@
+
+<!doctype html>
+<html lang="hu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/">
+      
+      
+      
+        <link rel="next" href="integration_options/">
+      
+      
+        
+          <link rel="alternate" href="/apidocstest/" hreflang="hu">
+        
+          <link rel="alternate" href="/apidocstest/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#minicrm-api-alapok" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href="." title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Alapok
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Nyelvváltás">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/apidocstest/" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/apidocstest/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="integration_options/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="contacts/" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#systemid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SystemID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SystemID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hogyan-talalhato-meg-a-systemid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hogyan található meg a SystemID?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#termek-modul-es-kategoria-product-module-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Termék, modul és kategória (Product / module / category)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adatlap-vagy-projekt-opportunity-card-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adatlap vagy projekt (Opportunity card / project)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adatlap vagy projekt (Opportunity card / project)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#az-adatlap-szerkezeti-felepitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Az adatlap szerkezeti felépítése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsodleges-es-egyeb-kapcsolattartok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elsődleges és egyéb kapcsolattartók
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialis-modulok-adatlap-szerkezete-invoice-order-offer-stb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speciális modulok adatlap-szerkezete (Invoice, order, offer stb.)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projektmenedzsment-sajatossagok-kanban-nezet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projektmenedzsment sajátosságok (Kanban nézet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ceg-kapcsolat-es-entitasok-viszonya" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cég, kapcsolat és entitások viszonya
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cég, kapcsolat és entitások viszonya">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ceg-adatlap-company-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cég adatlap (Company card)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kapcsolattarto-adatlap-contact-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kapcsolattartó adatlap (Contact card)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mezonevek-az-adatbazisban-field-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mezőnevek az adatbázisban (Field name)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-kulcs-generalasa-api-key-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Kulcs Generálása (API key generation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Kulcs Generálása (API key generation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-kulcs-generalasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API kulcs generálása
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eles-es-tesztkornyezetek-production-and-test-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Éles és Tesztkörnyezetek (Production and test environments)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="integration_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="offers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#systemid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SystemID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SystemID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hogyan-talalhato-meg-a-systemid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hogyan található meg a SystemID?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#termek-modul-es-kategoria-product-module-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Termék, modul és kategória (Product / module / category)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adatlap-vagy-projekt-opportunity-card-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adatlap vagy projekt (Opportunity card / project)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adatlap vagy projekt (Opportunity card / project)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#az-adatlap-szerkezeti-felepitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Az adatlap szerkezeti felépítése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elsodleges-es-egyeb-kapcsolattartok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elsődleges és egyéb kapcsolattartók
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialis-modulok-adatlap-szerkezete-invoice-order-offer-stb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Speciális modulok adatlap-szerkezete (Invoice, order, offer stb.)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projektmenedzsment-sajatossagok-kanban-nezet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projektmenedzsment sajátosságok (Kanban nézet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ceg-kapcsolat-es-entitasok-viszonya" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cég, kapcsolat és entitások viszonya
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cég, kapcsolat és entitások viszonya">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ceg-adatlap-company-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cég adatlap (Company card)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kapcsolattarto-adatlap-contact-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kapcsolattartó adatlap (Contact card)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mezonevek-az-adatbazisban-field-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mezőnevek az adatbázisban (Field name)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-kulcs-generalasa-api-key-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Kulcs Generálása (API key generation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Kulcs Generálása (API key generation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-kulcs-generalasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REST API kulcs generálása
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eles-es-tesztkornyezetek-production-and-test-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Éles és Tesztkörnyezetek (Production and test environments)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="minicrm-api-alapok">MiniCRM API Alapok</h1>
+<p>Ez a dokumentáció a MiniCRM REST API használatának alapvető fogalmait, architektúráját és alapvető működési elveit mutatja be.</p>
+<hr />
+<h2 id="systemid">SystemID</h2>
+<p>A <strong>SystemID</strong> a MiniCRM API egyik alapfogalma, amely egy <strong>5 számjegyből álló egyedi azonosító</strong>. Ez az azonosító a kérések hitelesítésére szolgál, teljesen stabil, és a jövőben sem fog megváltozni.</p>
+<p>A SystemID közvetlenül használható a cURL kapcsolódási URL-ekben is:</p>
+<pre><code class="language-bash">curl [https://r3.minicrm.hu/Api](https://r3.minicrm.hu/Api)...
+</code></pre>
+<h3 id="hogyan-talalhato-meg-a-systemid">Hogyan található meg a SystemID?</h3>
+<p>A SystemID-t a böngésző címsorában találja meg, közvetlenül a domain név után. 
+<em>Például:</em> ha a cím <code>https://r3.minicrm.hu/51546/TodayView</code>, akkor a <strong>51546</strong> lesz a SystemID.</p>
+<hr />
+<h2 id="termek-modul-es-kategoria-product-module-category">Termék, modul és kategória (Product / module / category)</h2>
+<p>A MiniCRM-ben az adatokat és a folyamatokat <strong>termékekbe</strong> (Products) szervezzük. A rendszerben és a dokumentációban a <em>termék (product)</em>, <em>modul (module)</em> és <em>kategória (category)</em> kifejezések egymás szinonimái, mind ugyanazt jelentik.</p>
+<ul>
+<li>Az API-ban a termékekre <strong>Category</strong> néven hivatkozunk, a leggyakrabban használt azonosító pedig a <strong>CategoryID</strong>.</li>
+<li>Ezek a modulok felelnek meg az oldalsáv menüpontjainak (pl. <em>Sales (Értékesítés)</em>, <em>Invoice (Számlázás)</em>, <em>Helpdesk</em>, <em>Order (Megrendelések)</em> stb.).</li>
+<li>A <strong>CategoryID</strong> szintén a böngésző címsorából olvasható ki a modul megnyitásakor (a URL végén található szám, pl. <code>.../#Project-25</code>, ahol a 25 a kategória azonosítója).</li>
+</ul>
+<hr />
+<h2 id="adatlap-vagy-projekt-opportunity-card-project">Adatlap vagy projekt (Opportunity card / project)</h2>
+<p>Az adatlapok (opportunity cards) vagy projektek a termékeken (modulokon) belül vannak listázva. Az adatlapok alapvető szerkezete minden modulban megegyezik; a különbség a konkrét mezőkben és a hozzájuk rendelt adatokban van. A mezőket az adminisztrátorok testreszabhatják a webes felületen.</p>
+<p>Az API-n keresztül az adatlapok <strong>Project</strong> néven érhetők el.</p>
+<h3 id="az-adatlap-szerkezeti-felepitese">Az adatlap szerkezeti felépítése</h3>
+<p>Minden adatlap négy fő területből áll:</p>
+<ol>
+<li><strong>Feladatkezelő sáv (Task area):</strong> Itt jelenik meg minden nyitott feladat a részleteivel együtt (feladat tartalma, felelős, határidő, megjegyzések).</li>
+<li><strong>Előzmények (History area):</strong> A rendszer itt követ minden változást, ami az adatlapon történik. Itt jelennek meg a kiküldött e-mailek, SMS-ek, WhatsApp üzenetek, valamint a lezárt feladatok is.</li>
+<li><strong>Mezők (Fields area):</strong> A MiniCRM egyedileg testreszabható, így itt jelennek meg a saját létrehozású egyedi mezők. Minden itt történő változás bekerül az előzmények közé is.</li>
+<li><strong>Ügyfélblokk (Contacts area):</strong> Ez a terület az alábbi részekre tagolódik:<ul>
+<li><em>Cégadatok (Business data):</em> A vállalati adatok helye. (A MiniCRM-ben létezhet adatlap cégadatok nélkül is, ekkor csak egy kapcsolattartó látható).</li>
+<li><em>Kapcsolatok (Contacts):</em> A megjelölt céghez tartozó összes kapcsolattartó listája. Egyszerre csak egyetlen <strong>Elsődleges kapcsolattartó (Primary contact)</strong> létezhet, akihez az aktuális adatlap közvetlenül kapcsolódik.</li>
+<li><em>Projektek (Projects):</em> A céghez vagy kapcsolattartóhoz köthető összes többi adatlap, termékek szerint csoportosítva.</li>
+</ul>
+</li>
+</ol>
+<h3 id="elsodleges-es-egyeb-kapcsolattartok">Elsődleges és egyéb kapcsolattartók</h3>
+<p>Egy adatlagnak egyszerre legfeljebb <strong>egy elsődleges kapcsolattartója</strong> lehet. Ha az adatlaphoz több személy is kötődik, a többiek az elsődleges alatt, az „Egyéb kapcsolatok” (Other contacts) szekcióban jelennek meg.</p>
+<hr />
+<h2 id="specialis-modulok-adatlap-szerkezete-invoice-order-offer-stb">Speciális modulok adatlap-szerkezete (Invoice, order, offer stb.)</h2>
+<p>A Számlák (Invoice), Megrendelések (Order), Ajánlatok (Offer), Szállítólevelek (Delivery Notes), Szerviz munkalapok (Service Worksheet) és Teljesítési igazolások (Certificate of contract completion) modulokban található kártyák <strong>speciális felépítésűek, két füllel rendelkeznek</strong>.</p>
+<ul>
+<li><strong>Projekt fül (Project tab):</strong> Itt kezelhetők az egyedi mezők, feladatok és követő szekvenciák.</li>
+<li><strong>Bizonylat fül (pl. Order/Invoice tab):</strong> A specifikus funkciók (tételek, árak, számlázási adatok) ezen a külön fülön és külön API végponton keresztül működnek.</li>
+</ul>
+<hr />
+<h2 id="projektmenedzsment-sajatossagok-kanban-nezet">Projektmenedzsment sajátosságok (Kanban nézet)</h2>
+<p>A <strong>Project Management</strong> nevű termék egy speciális feladat-nézettel rendelkezik, amelyet <strong>Kanban nézetként</strong> is ismerünk. Ez a felület a nyitott feladatokat meghatározott oszlopokban jeleníti meg a munkafolyamat állapota szerint:
+* Ötletek (Ideas)
+* Aktuális feladatok (Current tasks)
+* Folyamatban lévő munkák (Work in progress)
+* Ellenőrzés (Review)
+* Függőben lévő (Pending)
+* Kész (Done)
+* Elutasított (Rejected)</p>
+<hr />
+<h2 id="ceg-kapcsolat-es-entitasok-viszonya">Cég, kapcsolat és entitások viszonya</h2>
+<p>Az adatlap jobb oldalsávjában látható az ügyfél és a kapcsolattartók, akikhez az adatlap tartozik. Az ügyfél lehet egy cég, egy magánszemély, vagy egy cég a hozzá tartozó kapcsolattartókkal.</p>
+<p>A MiniCRM-ben a logikai hierarchia a következőképpen épül fel:
+<strong>Adatlapok (Projects) -&gt; Kapcsolattartók (Contacts) -&gt; Cégek (Companies)</strong></p>
+<p>Az adatlapok a kapcsolattartókhoz vannak rendelve, a kapcsolattartók pedig a cégekhez. </p>
+<h3 id="ceg-adatlap-company-card">Cég adatlap (Company card)</h3>
+<p>Egy dedikált oldal, ahol a specifikus cég összes adata regisztrálva van. Tartalmazza a céghez köthető összes korábbi adatlap összesített előzményeit (Account history), a kapcsolattartók listáját, valamint a cég alapadatait (weboldal, leírás, e-mail, telefon, adószám, EU adószám, cégjegyzékszám stb.). A cég adatlapon is létrehozhatók egyedi mezők.</p>
+<h3 id="kapcsolattarto-adatlap-contact-card">Kapcsolattartó adatlap (Contact card)</h3>
+<p>Ezen a kártyán regisztrálhatók a személyes adatok: vezetéknév, keresztnév, beosztás, telefonszám, e-mail cím vagy levelezési cím, szükség esetén egyedi mezőkkel kiegészítve.</p>
+<blockquote>
+<p>💡 <strong>Fontos integrációs szabály:</strong> Ha az API-n keresztül egy teljesen új struktúrát szeretne létrehozni (új céggel, új kapcsolattartóval és új adatlappal), ehhez <strong>3 különálló API hívásra</strong> van szükség ebben a kötelező sorrendben:
+1. Cég létrehozása (Create company).
+2. Kapcsolattartó létrehozása (Create contact), és annak hozzárendelése az 1. lépésben kapott cégazonosítóhoz (<code>BusinessId</code>).
+3. Az adatlap (Opportunity card / Project) létrehozása, és annak hozzárendelése a 2. lépésben kapott kapcsolat-azonosítóhoz (<code>ContactId</code>).</p>
+</blockquote>
+<hr />
+<h2 id="mezonevek-az-adatbazisban-field-name">Mezőnevek az adatbázisban (Field name)</h2>
+<p>A MiniCRM lehetőséget biztosít egyedi mezők létrehozására. Az integrációk során az ezekre való hivatkozáshoz ismerni kell a mezők adatbázisban regisztrált pontos nevét.</p>
+<p>Ehhez <strong>Adminisztrátor</strong> joggal kell rendelkeznie a MiniCRM rendszerben:
+1. Navigáljon a mezők konfigurációs oldalára.
+2. Kattintson a szerkesztés ikonra a mező módosításához.
+3. Itt megtalálja a mező regisztrált nevét (pl. <code>Type</code>).</p>
+<p>A rendszerben a mezők felépítése a kártya típusától függően <code>Contact.MezoNeve</code> vagy <code>Project.MezoNeve</code> formátumban látható. <strong>Az integrációk és API hívások során a pont előtti részt figyelmen kívül kell hagyni, csak a pont utáni nevet kell használni</strong> (pl. a <code>Project.Type</code>-ból csak a <code>Type</code>-ot használjuk).</p>
+<hr />
+<h2 id="api-kulcs-generalasa-api-key-generation">API Kulcs Generálása (API key generation)</h2>
+<h3 id="rest-api-kulcs-generalasa">REST API kulcs generálása</h3>
+<p>Az API használatához egy API Kulcsra (API Key) van szükség, amelyet kizárólag egy <strong>Adminisztrátor</strong> generálhat a <strong>Beállítások -&gt; Rendszer</strong> oldalon.</p>
+<ul>
+<li>⚠️ <strong>Egyszeri megjelenítés:</strong> A generált kulcs biztonsági okokból <strong>csak egyetlen egyszer jelenik meg</strong> a generálás pillanatában, később nem hozzáférhető. Azonnal mentse el egy biztonságos jelszókezelőbe.</li>
+<li><strong>Védelem:</strong> A kulcs az Ön jelszava az adatokhoz, senkinek ne adja át (még a MiniCRM támogatásnak sem).</li>
+<li><strong>Elvesztés kezelése:</strong> Ha a kulcs elveszik, nincs lehetőség a megtekintésére; új kulcsot kell generálni. Új kulcs generálása esetén az összes meglévő aktív külső integrációt frissíteni kell az új kulccsal.</li>
+</ul>
+<h3 id="eles-es-tesztkornyezetek-production-and-test-environments">Éles és Tesztkörnyezetek (Production and test environments)</h3>
+<p>A MiniCRM-ben lehetőség van az élő (production) rendszertől teljesen különálló, független <strong>tesztkörnyezet</strong> igénylésére a help@minicrm.hu címen. </p>
+<p>A tesztkörnyezetből nem lehet e-maileket küldeni, nem lehet jelszót visszaállítani, és GDPR okokból az adatok alapértelmezetten titkosítva vannak.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

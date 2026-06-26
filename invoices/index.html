@@ -1,0 +1,1575 @@
+
+<!doctype html>
+<html lang="hu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/invoices/">
+      
+      
+        <link rel="prev" href="../offers/">
+      
+      
+        <link rel="next" href="../products/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="hu">
+        
+          <link rel="alternate" href="../en/invoices/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Számlázó - MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#szamla-vegpont" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Számlázó
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Nyelvváltás">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/invoices/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration_options/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contacts/" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uj-szamla-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új számla létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamlak-keresese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számlák keresése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Számlák keresése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#szamla-reszletes-adatai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla részletes adatai
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamlalista-vegpont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számlalista végpont
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamla-frissitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla frissítése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Számla frissítése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#szamla-fizetettre-jelolese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla fizetettre jelölése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#szamla-sztornozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla sztornózása
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#egyedi-mezok-szerkesztese-szamlaadatlap-mezoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egyedi mezők szerkesztése — számlaadatlap mezői
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uj-szamla-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új számla létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamlak-keresese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számlák keresése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Számlák keresése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#szamla-reszletes-adatai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla részletes adatai
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamlalista-vegpont" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számlalista végpont
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamla-frissitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla frissítése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Számla frissítése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#szamla-fizetettre-jelolese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla fizetettre jelölése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#szamla-sztornozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számla sztornózása
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#egyedi-mezok-szerkesztese-szamlaadatlap-mezoi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egyedi mezők szerkesztése — számlaadatlap mezői
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="szamla-vegpont">Számla végpont</h1>
+<p>Ezzel a végponttal a felhasználó új számlákat hozhat létre, és kezelheti a MiniCRM-ben meglévő számlákat. Emellett számlák keresésére is használható.</p>
+<p>Ebben a fejezetben gyakran használjuk a <code>$InvoiceId</code> változót. Ez a tényleges dokumentumazonosító, és eltér az adatlap URL-jében megjelenő adatlapazonosítótól.</p>
+<hr />
+<h2 id="uj-szamla-letrehozasa">Új számla létrehozása</h2>
+<p>Új számla létrehozásához a következőkre van szükség:</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/Invoice</code></li>
+<li>Paraméter: <code>CustomerId</code> — kapcsolattartó azonosítója — vagy <code>ReferenceId</code> — projekt külső azonosítója</li>
+<li>HTTP metódus: <code>POST</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>Új számla létrehozása csak a rendszeredben már meglévő kapcsolattartóval vagy céggel lehetséges.</p>
+<p>Ezeknek két különböző azonosítójuk lehet:</p>
+<ol>
+<li><code>CustomerId</code> — az azonosító, amelyet a rendszer ad a cég vagy kapcsolattartó létrehozása után.</li>
+<li><code>ReferenceId</code> — külső azonosító, amelyet nem a MiniCRM hoz létre. Ezt céghez vagy kapcsolattartóhoz tudod beállítani, például kapcsolattartó XML-szinkronnal történő létrehozásakor vagy később API-n keresztül.</li>
+</ol>
+<p>A kapcsolattartó létrehozásáról és a címkezelésről további információért lásd a <code>Company/contact endpoint</code> és <code>Address endpoint</code> fejezeteket.</p>
+<p>A számlákon a számlázási cím kerül használatra, és ha nincs számlázási cím, akkor a kapcsolattartó alapértelmezett címe kerül használatra.</p>
+<p>A vevői adatok tömbben történő használata opcionális; a vevő adatait közvetlenül a kérésben is megadhatod.</p>
+<p>Ha van cím, azt a címet használja a rendszer; ha nincs, akkor új alapértelmezett számlázási címként kerül beállításra.</p>
+<p>Ebben az esetben az adószámot és a bankszámlaszámot az API felülírja.</p>
+<p>Új számla létrehozásához hitelesítés szükséges, az alábbi példának megfelelően:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPOST &quot;https://r3.minicrm.hu/Api/Invoice/&quot; -d '
+{
+     &quot;Number&quot;: &quot;2023-E/00001&quot;,
+     &quot;Type&quot;: &quot;Invoice&quot;,
+     &quot;Media&quot;: &quot;PKI&quot;,
+     &quot;Customer&quot;: {
+          &quot;Name&quot;: &quot;John Doe&quot;,
+          &quot;CountryId&quot;: &quot;40&quot;,
+          &quot;PostalCode&quot;: &quot;000000&quot;,
+          &quot;City&quot;: &quot;Example City&quot;,
+          &quot;Address&quot;: &quot;Example Street 1&quot;,
+          &quot;AccountNumber&quot;: &quot;12345678-12345678-12345678&quot;,
+          &quot;VatNumber&quot;: &quot;RO654321&quot;
+     },
+     &quot;Vendor&quot;: {
+          &quot;Name&quot;: &quot;Anonym Company&quot;,
+          &quot;CountryId&quot;: &quot;40&quot;,
+          &quot;PostalCode&quot;: &quot;000000&quot;,
+          &quot;City&quot;: &quot;Anytown&quot;,
+          &quot;Address&quot;: &quot;Any Street 2&quot;,
+          &quot;AccountNumber&quot;: &quot;87654321-87654321-87654321&quot;,
+          &quot;VatNumber&quot;: &quot;RO123456&quot;,
+          &quot;RegistrationNumber&quot;: &quot;&quot;,
+          &quot;Miscellaneous&quot;: &quot;&quot;
+     },
+     &quot;Subject&quot;: &quot;&quot;,
+     &quot;PaymentMethod&quot;: &quot;Cash&quot;,
+     &quot;Issued&quot;: &quot;2023-11-27&quot;,
+     &quot;Performance&quot;: &quot;2023-11-27&quot;,
+     &quot;Prompt&quot;: &quot;2023-11-30&quot;,
+     &quot;Paid&quot;: &quot;0000-00-00&quot;,
+     &quot;CurrencyCode&quot;: &quot;EUR&quot;,
+     &quot;AmountNet&quot;: &quot;2000.00&quot;,
+     &quot;AmountVat&quot;: &quot;540.00&quot;,
+     &quot;Amount&quot;: &quot;2540.00&quot;,
+     &quot;IsReverseCharge&quot;: &quot;0&quot;,
+     &quot;DocumentId&quot;: &quot;66&quot;,
+     &quot;DocumentUrl&quot;: &quot;https://UrlOfTheDocument&quot;,
+     &quot;DocumentFileName&quot;: &quot;Invoice-01-2023-e-00001-1.pdf&quot;,
+     &quot;Items&quot;: [
+       {
+           &quot;Name&quot;: &quot;Product_name&quot;,
+           &quot;Description&quot;: &quot;&quot;,
+           &quot;PriceNet&quot;: &quot;1 000,00&quot;,
+           &quot;VAT&quot;: &quot;19%&quot;,
+           &quot;Quantity&quot;: &quot;2&quot;,
+           &quot;Unit&quot;: &quot;piece&quot;,
+           &quot;PriceNetTotal&quot;: &quot;2 000,00&quot;,
+           &quot;PriceTotal&quot;: &quot;2 380,00&quot;
+       }
+  ]
+}
+</code></pre>
+<p>Specifikációk:</p>
+<ul>
+<li><code>"Media": "PKI"</code> az alapértelmezett számlatípust jelenti — elektronikus verzió —, míg a <code>Paper</code> a papíralapú számlatípust jelenti.</li>
+</ul>
+<hr />
+<h2 id="szamlak-keresese">Számlák keresése</h2>
+<h3 id="szamla-reszletes-adatai">Számla részletes adatai</h3>
+<p>Ez a végpont egy megadott számlára keres, és visszaadja a számla összes részletét.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/Invoice</code></li>
+<li>Paraméter: <code>InvoiceId</code> — létrehozott számla azonosítója</li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/Invoice/$InvoiceId&quot;
+</code></pre>
+<p>A rendszer a számla részleteivel válaszol:</p>
+<pre><code class="language-json">{
+  &quot;Id&quot;: &quot;12&quot;,
+  &quot;Number&quot;: &quot;2023-E/00014&quot;,
+  &quot;Type&quot;: &quot;Invoice&quot;,
+  &quot;Media&quot;: &quot;PKI&quot;,
+  &quot;Customer&quot;: {
+    &quot;Name&quot;: &quot;John Doe&quot;,
+    &quot;CountryId&quot;: &quot;40&quot;,
+    &quot;PostalCode&quot;: &quot;000000&quot;,
+    &quot;City&quot;: &quot;Example City&quot;,
+    &quot;Address&quot;: &quot;Example Street 1&quot;,
+    &quot;AccountNumber&quot;: &quot;12345678-12345678-12345678&quot;,
+    &quot;VatNumber&quot;: &quot;RO654321&quot;
+  },
+  &quot;Vendor&quot;: {
+    &quot;Name&quot;: &quot;Anonym Company&quot;,
+    &quot;CountryId&quot;: &quot;40&quot;,
+    &quot;PostalCode&quot;: &quot;000000&quot;,
+    &quot;City&quot;: &quot;Anytown&quot;,
+    &quot;Address&quot;: &quot;Any Street 2&quot;,
+    &quot;AccountNumber&quot;: &quot;87654321-87654321-87654321&quot;,
+    &quot;VatNumber&quot;: &quot;RO123456&quot;,
+    &quot;RegistrationNumber&quot;: &quot;&quot;,
+    &quot;Miscellaneous&quot;: &quot;&quot;
+  },
+  &quot;Subject&quot;: &quot;&quot;,
+  &quot;PaymentMethod&quot;: &quot;Cash&quot;,
+  &quot;Issued&quot;: &quot;2023-11-27&quot;,
+  &quot;Performance&quot;: &quot;2023-11-27&quot;,
+  &quot;Prompt&quot;: &quot;2023-11-27&quot;,
+  &quot;Paid&quot;: &quot;0000-00-00&quot;,
+  &quot;CurrencyCode&quot;: &quot;EUR&quot;,
+  &quot;AmountNet&quot;: &quot;2000.00&quot;,
+  &quot;AmountVat&quot;: &quot;540.00&quot;,
+  &quot;Amount&quot;: &quot;2540.00&quot;,
+  &quot;IsReverseCharge&quot;: &quot;0&quot;,
+  &quot;DocumentUrl&quot;: &quot;https://UrlOfTheDocument&quot;,
+  &quot;DocumentFileName&quot;: &quot;invoice-2023-e-00014-1.pdf&quot;,
+  &quot;Items&quot;: [
+     {
+        &quot;Name&quot;: &quot;Product_name&quot;,
+        &quot;Description&quot;: &quot;&quot;,
+        &quot;PriceNet&quot;: &quot;1 000,00&quot;,
+        &quot;VAT&quot;: &quot;19%&quot;,
+        &quot;Quantity&quot;: &quot;2&quot;,
+        &quot;Unit&quot;: &quot;piece&quot;,
+        &quot;PriceNetTotal&quot;: &quot;2 000,00&quot;,
+        &quot;PriceTotal&quot;: &quot;2 380,00&quot;
+     }
+  ]
+}
+</code></pre>
+<hr />
+<h2 id="szamlalista-vegpont">Számlalista végpont</h2>
+<p>A lenti kérés használatával API-n keresztül lekérheted a kiállított számláid listáját. Fontos: a lista nem tartalmazza azokat a számlákat, amelyek nincsenek kiállítva.</p>
+<p>A listázás 100 eredményt ad vissza. A lapozás a <code>Page</code> paraméterrel végezhető; további részletek a Lapozás fejezetben találhatók.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/Invoice/List</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<pre><code class="language-text">https://r3.minicrm.hu/Api/Invoice/List
+</code></pre>
+<p>Példa válasz:</p>
+<pre><code class="language-json">{
+    &quot;Count&quot;: 3,
+    &quot;Results&quot;: [
+       &quot;145&quot;: {
+         &quot;Id&quot;: &quot;123&quot;,
+         &quot;ProjectId&quot;: &quot;1234&quot;,
+         &quot;StornedId&quot;: &quot;&quot;,
+         &quot;Number&quot;: &quot;2024-E-EUR/00001&quot;,
+         &quot;Type&quot;: &quot;Invoice&quot;,
+         &quot;Issued&quot;: &quot;2024-02-19&quot;,
+         &quot;Performance&quot;: &quot;2024-02-15&quot;,
+         &quot;Prompt&quot;: &quot;2024-02-15&quot;,
+         &quot;Paid&quot;: &quot;&quot;,
+         &quot;CurrencyCode&quot;: &quot;EUR&quot;,
+         &quot;AmountNet&quot;: &quot;1599.0000&quot;,
+         &quot;AmountVat&quot;: &quot;432.0000&quot;,
+         &quot;Amount&quot;: &quot;2031.0000&quot;,
+         &quot;Status&quot;: &quot;In Preparation&quot;,
+         &quot;StatusGroup&quot;: &quot;Open&quot;,
+         &quot;DocumentUrl&quot;:&quot;&quot;
+       },
+       {...},
+       {...}
+    ]
+}
+</code></pre>
+<p>Megjegyzés: a Stock végpontnál külön is szerepel, hogy az <code>Invoice/List</code>, <code>Offer/List</code> és <code>Order/List</code> végpontok dokumentumlistázásra szolgálnak. A <code>Company Policies v2</code> szerint az <code>Invoice/List</code> nem listáz ki nem állított számlákat, és a listázás 100 eredményt ad vissza, lapozással a <code>Page</code> paraméteren keresztül [2].</p>
+<hr />
+<h2 id="szamla-frissitese">Számla frissítése</h2>
+<h3 id="szamla-fizetettre-jelolese">Számla fizetettre jelölése</h3>
+<p>Ezzel a végponttal lehetőség van a számla státuszát <code>Paid</code> értékre állítani.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/Invoice/$InvoiceId/Paid</code></li>
+<li>Paraméter: <code>InvoiceId</code> — létrehozott számla azonosítója</li>
+<li>HTTP metódus: <code>POST</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPOST
+&quot;https://r3.minicrm.hu/Api/Invoice/$InvoiceId/Paid&quot;
+</code></pre>
+<p>Opcionálisan lehetőség van vevői adatokat tartalmazó objektum használatára is — ha szükséges a vevői adatok módosítása.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPOST &quot;https://r3.minicrm.hu/Api/Invoice/16/Paid&quot;
+-d '{
+      &quot;Customer&quot;: {
+          &quot;Name&quot;: &quot;John Doe&quot;,
+          &quot;CountryId&quot;: &quot;40&quot;,
+          &quot;PostalCode&quot;: &quot;000000&quot;,
+          &quot;City&quot;: &quot;Example City&quot;,
+          &quot;Address&quot;: &quot;Example Street&quot;,
+          &quot;AccountNumber&quot;: &quot;12345678-12345678-12345678&quot;,
+          &quot;VatNumber&quot;: &quot;RO654321&quot;
+      },
+}'
+</code></pre>
+<p>Amikor egy számla fizetettre van jelölve, a rendszer válasza a számlaadatlap részleteit is tartalmazza:</p>
+<pre><code class="language-json">{
+  &quot;Id&quot;: &quot;17&quot;,
+  &quot;Number&quot;: &quot;2023-E/00016&quot;,
+  &quot;Type&quot;: &quot;Invoice&quot;,
+  &quot;Media&quot;: &quot;PKI&quot;,
+  &quot;Customer&quot;: {
+    &quot;Name&quot;: &quot;John Doe&quot;,
+    &quot;CountryId&quot;: &quot;40&quot;,
+    &quot;PostalCode&quot;: &quot;000000&quot;,
+    &quot;City&quot;: &quot;Example City&quot;,
+    &quot;Address&quot;: &quot;Example Street 1&quot;,
+    &quot;AccountNumber&quot;: &quot;12345678-12345678-12345678&quot;,
+    &quot;VatNumber&quot;: &quot;RO654321&quot;
+  },
+  &quot;Vendor&quot;: {
+    &quot;Name&quot;: &quot;Anonym Company&quot;,
+    &quot;CountryId&quot;: &quot;40&quot;,
+    &quot;PostalCode&quot;: &quot;000000&quot;,
+    &quot;City&quot;: &quot;Anytown&quot;,
+    &quot;Address&quot;: &quot;Any Street 2&quot;,
+    &quot;AccountNumber&quot;: &quot;87654321-87654321-87654321&quot;,
+    &quot;VatNumber&quot;: &quot;RO123456&quot;,
+    &quot;RegistrationNumber&quot;: &quot;&quot;,
+    &quot;Miscellaneous&quot;: &quot;&quot;
+  },
+  &quot;Subject&quot;: &quot;Invoice no. EUR-0-00016&quot;,
+  &quot;PaymentMethod&quot;: &quot;Cash&quot;,
+  &quot;Issued&quot;: &quot;2023-11-27&quot;,
+  &quot;Performance&quot;: &quot;2023-11-27&quot;,
+  &quot;Prompt&quot;: &quot;2023-11-27&quot;,
+  &quot;Paid&quot;: &quot;2023-11-27&quot;,
+  &quot;CurrencyCode&quot;: &quot;EUR&quot;,
+  &quot;AmountNet&quot;: &quot;12000.00&quot;,
+  &quot;AmountVat&quot;: &quot;3240.00&quot;,
+  &quot;Amount&quot;: &quot;15240.00&quot;,
+  &quot;IsReverseCharge&quot;: &quot;0&quot;,
+  &quot;DocumentId&quot;: &quot;68&quot;,
+  &quot;DocumentUrl&quot;: &quot;https://UrlOfTheDocument&quot;,
+  &quot;DocumentFileName&quot;: &quot;invoice-2023-e-00016-1.pdf&quot;,
+  &quot;Items&quot;: [
+     {
+        &quot;Name&quot;: &quot;Product_name&quot;,
+        &quot;Description&quot;: &quot;&quot;,
+        &quot;PriceNet&quot;: &quot;12 000,00&quot;,
+        &quot;VAT&quot;: &quot;19%&quot;,
+        &quot;Quantity&quot;: &quot;1&quot;,
+        &quot;Unit&quot;: &quot;piece&quot;,
+        &quot;PriceNetTotal&quot;: &quot;12 000,00&quot;,
+        &quot;PriceTotal&quot;: &quot;14 280,00&quot;
+     }
+  ]
+}
+</code></pre>
+<hr />
+<h3 id="szamla-sztornozasa">Számla sztornózása</h3>
+<p>Ezzel a végponttal a felhasználó sztornózhat egy adott számlát.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/Invoice/$InvoiceId/Storno</code></li>
+<li>Paraméter: <code>InvoiceId</code> — létrehozott számla azonosítója</li>
+<li>HTTP metódus: <code>POST</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPOST
+&quot;https://r3.minicrm.hu/Api/Invoice/$InvoiceId/Storno&quot;
+</code></pre>
+<p>Ebben az esetben a rendszer automatikusan új sztornó számlát generál a megadott számlához.</p>
+<p>A válasz a sztornózott számla részleteit tartalmazza:</p>
+<pre><code class="language-json">{
+  &quot;Id&quot;: &quot;17&quot;,
+  &quot;Number&quot;: &quot;2023-E/00017&quot;,
+  &quot;Type&quot;: &quot;Invoice&quot;,
+  &quot;Media&quot;: &quot;PKI&quot;,
+  &quot;Customer&quot;: {
+    &quot;Name&quot;: &quot;John Doe&quot;,
+    &quot;CountryId&quot;: &quot;40&quot;,
+    &quot;PostalCode&quot;: &quot;000000&quot;,
+    &quot;City&quot;: &quot;Example City&quot;,
+    &quot;Address&quot;: &quot;Example Street 1&quot;,
+    &quot;AccountNumber&quot;: &quot;12345678-12345678-12345678&quot;,
+    &quot;VatNumber&quot;: &quot;RO654321&quot;
+  },
+  &quot;Vendor&quot;: {
+    &quot;Name&quot;: &quot;Anonym Company&quot;,
+    &quot;CountryId&quot;: &quot;40&quot;,
+    &quot;PostalCode&quot;: &quot;000000&quot;,
+    &quot;City&quot;: &quot;Anytown&quot;,
+    &quot;Address&quot;: &quot;Any Street 2&quot;,
+    &quot;AccountNumber&quot;: &quot;87654321-87654321-87654321&quot;,
+    &quot;VatNumber&quot;: &quot;RO123456&quot;,
+    &quot;RegistrationNumber&quot;: &quot;&quot;,
+    &quot;Miscellaneous&quot;: &quot;&quot;
+  },
+  &quot;Subject&quot;: &quot;Invoice no. 2023-E/00017 Storno invoice of the invoice no. 2023-E/00016&quot;,
+  &quot;PaymentMethod&quot;: &quot;Cash&quot;,
+  &quot;Issued&quot;: &quot;2023-11-27&quot;,
+  &quot;Performance&quot;: &quot;2023-11-27&quot;,
+  &quot;Prompt&quot;: &quot;2023-11-27&quot;,
+  &quot;Paid&quot;: &quot;2023-11-27&quot;,
+  &quot;CurrencyCode&quot;: &quot;EUR&quot;,
+  &quot;AmountNet&quot;: &quot;12000.00&quot;,
+  &quot;AmountVat&quot;: &quot;3240.00&quot;,
+  &quot;Amount&quot;: &quot;15240.00&quot;,
+  &quot;IsReverseCharge&quot;: &quot;0&quot;,
+  &quot;DocumentId&quot;: &quot;68&quot;,
+  &quot;DocumentUrl&quot;: &quot;https://UrlOfTheDocument&quot;,
+  &quot;DocumentFileName&quot;: &quot;storno_invoice-2023-e-00017.pdf&quot;,
+  &quot;Items&quot;: [
+     {
+        &quot;Name&quot;: &quot;Product_name&quot;,
+        &quot;Description&quot;: &quot;&quot;,
+        &quot;PriceNet&quot;: &quot;12 000,00&quot;,
+        &quot;VAT&quot;: &quot;19%&quot;,
+        &quot;Quantity&quot;: &quot;1&quot;,
+        &quot;Unit&quot;: &quot;piece&quot;,
+        &quot;PriceNetTotal&quot;: &quot;12 000,00&quot;,
+        &quot;PriceTotal&quot;: &quot;14 280,00&quot;
+     }
+  ]
+}
+</code></pre>
+<hr />
+<h3 id="egyedi-mezok-szerkesztese-szamlaadatlap-mezoi">Egyedi mezők szerkesztése — számlaadatlap mezői</h3>
+<p>Ez a végpont lehetővé teszi a felhasználó számára a számlaadatlapon található egyedi mezők kitöltését vagy módosítását.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/Invoice/$InvoiceId/Project</code></li>
+<li>Paraméter: <code>InvoiceId</code> — létrehozott számla azonosítója</li>
+<li>HTTP metódus: <code>POST</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>A kérés URL-je például így néz ki:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPOST
+&quot;https://r3.minicrm.hu/Api/Invoice/$InvoiceId/Project&quot;
+</code></pre>
+<p>A felhasználónak meg kell adnia annak a mezőnek a nevét, amelyet frissíteni szeretne:</p>
+<pre><code class="language-json">{
+    &quot;FieldName&quot;: &quot;Test&quot;,
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

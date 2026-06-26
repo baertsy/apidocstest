@@ -1,0 +1,2458 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/en/projects/">
+      
+      
+        <link rel="prev" href="../address/">
+      
+      
+        <link rel="next" href="../card_connection/">
+      
+      
+        
+          <link rel="alternate" href="../../projects/" hreflang="hu">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Adatlapok - MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#card-endpoint" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Adatlapok
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../projects/" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration_options/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contacts/" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schema-of-the-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema of the card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new card
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a new card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new company
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-contact-person" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new contact person
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-for-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for cards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search for cards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-data-of-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed data of a card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-companys-cards-from-one-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A company’s cards from one module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-based-on-card-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search based on card status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-based-on-update-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search based on update time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search based on update time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-time-and-date-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General time and date format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-updatedsince-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. UpdatedSince parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-updatedat-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. UpdatedAt parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-based-on-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search based on fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-search-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card search — extra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-the-card-status-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search the card status history
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-request-to-get-the-contents-of-a-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API request to get the contents of a filter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API request to get the contents of a filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating the request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-cards-of-a-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All cards of a company
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update a card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-owner-responsible-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card owner / responsible user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-a-card-to-another-contact-connected-to-the-same-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving a card to another contact connected to the same company
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-main-contact-of-the-card-when-it-is-connected-to-another-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing the main contact of the card when it is connected to another company
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-upload-to-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File upload to a card
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File upload to a card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-file-upload-to-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple file upload to a card
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting a card
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting a card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-query-for-deleted-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a query for deleted cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-deleted-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifying deleted cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restoring-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring a card
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-a-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a contact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schema-of-the-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema of the card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-new-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new card
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a new card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new company
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-contact-person" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new contact person
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-for-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search for cards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search for cards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-data-of-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed data of a card
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-companys-cards-from-one-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A company’s cards from one module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-based-on-card-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search based on card status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-based-on-update-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search based on update time
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Search based on update time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-time-and-date-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General time and date format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-updatedsince-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. UpdatedSince parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-updatedat-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. UpdatedAt parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-based-on-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search based on fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#card-search-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card search — extra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-the-card-status-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search the card status history
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-request-to-get-the-contents-of-a-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API request to get the contents of a filter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API request to get the contents of a filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating the request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-cards-of-a-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All cards of a company
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update a card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-owner-responsible-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Card owner / responsible user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-a-card-to-another-contact-connected-to-the-same-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving a card to another contact connected to the same company
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-main-contact-of-the-card-when-it-is-connected-to-another-company" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing the main contact of the card when it is connected to another company
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-upload-to-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File upload to a card
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File upload to a card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-file-upload-to-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple file upload to a card
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting a card
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting a card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-query-for-deleted-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a query for deleted cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-deleted-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifying deleted cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restoring-a-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restoring a card
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-a-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a contact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="card-endpoint">Card endpoint</h1>
+<p>Using this endpoint, you can retrieve card details — from opportunity cards, contact and/or company cards — and you can also update the information on these cards.</p>
+<hr />
+<h2 id="schema-of-the-card">Schema of the card</h2>
+<p>The available fields and their possible values in a given system can be queried via API through the Schema endpoint.</p>
+<p>Example:</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Schema/Type</code></li>
+<li>Parameter: in place of <code>$Type</code>, use <code>Business</code>, <code>Person</code> or <code>Project/$CategoryId</code></li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Schema/Project/20&quot;
+</code></pre>
+<pre><code class="language-json">{
+      &quot;AutoSalesV3_Qualification&quot;: {
+          &quot;421&quot;: &quot;Unqualified&quot;,
+          &quot;422&quot;: &quot;Qualified&quot;,
+          &quot;423&quot;: &quot;VIP&quot;
+      },
+      &quot;AutoSalesV3_SalesStatus&quot;: {
+          &quot;425&quot;: &quot;Discovery&quot;,
+          &quot;426&quot;: &quot;In progress&quot;,
+          &quot;427&quot;: &quot;Won opportunity&quot;,
+          &quot;428&quot;: &quot;Lost opportunity&quot;
+      },
+      &quot;Name&quot;: &quot;Text(512)&quot;,
+      &quot;StatusUpdatedAt&quot;: &quot;DateTime&quot;,
+      &quot;IsPrivate&quot;: &quot;Boolean&quot;,
+      &quot;Invited&quot;: &quot;Text(65535)&quot;,
+      &quot;Deleted&quot;: &quot;Int&quot;,
+      &quot;UpdatedAt&quot;: &quot;DateTime&quot;,
+      &quot;AutoSalesV3_LeadStep&quot;: {
+          &quot;2730&quot;: &quot;Offer&quot;,
+          &quot;2731&quot;: &quot;Follow-up offer&quot;,
+          &quot;2733&quot;: &quot;Contracting&quot;
+      },
+      &quot;AutoSalesV3_CustomerStep&quot;: {
+          &quot;2737&quot;: &quot;Implementation&quot;,
+          &quot;2738&quot;: &quot;Closed succesfully&quot;,
+          &quot;2739&quot;: &quot;Feedback&quot;
+      },
+      &quot;Enum1221&quot;: {
+          &quot;2673&quot;: &quot;Facebook&quot;,
+          &quot;2675&quot;: &quot;SEO&quot;,
+          &quot;2677&quot;: &quot;Google Ads&quot;,
+          &quot;2774&quot;: &quot;LinkedIn&quot;
+      }
+}
+</code></pre>
+<p>In the example above, only a few values are shown, but the request returns all values of the given module.</p>
+<hr />
+<h2 id="create-a-new-card">Create a new card</h2>
+<p>If you want to create a card with completely new data that does not yet exist in your system — company data, contact data and opportunity card — you need to perform 3 API requests:</p>
+<ul>
+<li>1st request: create the company card</li>
+<li>2nd request: create the contact card and assign it to the previously created company ID</li>
+<li>3rd request: create the opportunity card and assign it to the previously created contact</li>
+</ul>
+<hr />
+<h3 id="create-a-new-company">Create a new company</h3>
+<p>If the company search does not return any results and you would like to add a new company to MiniCRM, you can do it as follows.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Contact/</code></li>
+<li>HTTP method: <code>PUT</code></li>
+<li>Data input: <code>JSON</code></li>
+</ul>
+<p>You must fill in the <code>Type</code> parameter with the value <code>Business</code>, as well as the <code>Name</code> parameter.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Contact/&quot;-d
+{
+     &quot;Type&quot;: &quot;Business&quot;,
+     &quot;Name&quot;: &quot;MiniCRM Ltd.&quot;
+}
+</code></pre>
+<pre><code class="language-json">{
+     &quot;Id&quot;: 256
+}
+</code></pre>
+<hr />
+<h3 id="create-a-new-contact-person">Create a new contact person</h3>
+<p>If a new company is added to the system, you can also add a new contact person to it on this endpoint.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Contact/</code></li>
+<li>HTTP method: <code>PUT</code></li>
+<li>Data input: <code>JSON</code></li>
+</ul>
+<p>You must fill in at least the following data:</p>
+<ul>
+<li><code>Type</code> — with the value <code>Person</code></li>
+<li><code>FirstName</code> — at least the first name is required in MiniCRM</li>
+<li><code>BusinessId</code> — optional; it should be filled in if you want to connect the contact to an existing company</li>
+</ul>
+<p>Request:</p>
+<pre><code class="language-bash">$ curl -s --user &quot;https://r3.minicrm.hu/Api/R3/Contact/&quot; -d
+{
+     &quot;Type&quot;: &quot;Person&quot;,
+     &quot;FirstName&quot;: &quot;John&quot;,
+     &quot;LastName&quot;: &quot;Doe&quot;,
+     &quot;Email&quot;: &quot;john.doe@example.com&quot;,
+     &quot;BusinessId&quot;: 256
+}
+</code></pre>
+<p>In case of success, the system will respond with the ID of the newly created contact:</p>
+<pre><code class="language-json">{
+     &quot;Id&quot;: 256
+}
+</code></pre>
+<hr />
+<h2 id="search-for-cards">Search for cards</h2>
+<h3 id="detailed-data-of-a-card">Detailed data of a card</h3>
+<p>If you have the card identifier — or API URL — you can query the detailed data here. In the examples above, I received <code>"Id": 160</code> during the card search, so I will use this.</p>
+<p>The <code>ProjectEmail</code> field stores the unique email address of the Project. If you send an email to this email address, it will be archived to that card.</p>
+<p>The <code>ProjectHash</code> field stores the Project’s unique, hashed ID.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/CardId</code></li>
+<li>Parameter: <code>CardId</code> — opportunity card ID</li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;
+</code></pre>
+<pre><code class="language-json">{
+     Id: 160,
+     CategoryId: 20,
+     ContactId: 155,
+     UserId: &quot;John Doe&quot;,
+     Name: &quot;Doe Industries LTD (John Doe)&quot;,
+     StatusUpdatedAt: &quot;2023-03-23 12:56:51&quot;,
+     IsPrivate: 0,
+     Deleted: 0,
+     CreatedBy: &quot;John Doe&quot;,
+     CreatedAt: &quot;2023-03-17 10:40:08&quot;,
+     UpdatedBy: &quot;John Doe&quot;,
+     UpdatedAt: &quot;2023-03-23 13:11:31&quot;,
+     AutoSalesV3_Qualification: &quot;Qualified&quot;,
+     AutoSalesV3_IsHot: &quot;Yes&quot;,
+     AutoSalesV3_SalesStatus: &quot;Won opportunity&quot;,
+     AutoSalesV3_LeadStep: &quot;Follow-up offer&quot;,
+     AutoSalesV3_CustomerStep: &quot;Closed successfully&quot;,
+     ClosingDate: &quot;2023-03-22 23:59:59&quot;,
+     AttachedOffer: &quot;https://r3.minicrm.io/64421/Download/S3/?t=project&amp;inline=&quot;,
+     OfferDate: &quot;2023-03-21 23:59:59&quot;,
+     SaleValue: 1500,
+     WhyLost: &quot;&quot;,
+     DetailsWhyLost: &quot;&quot;,
+     BusinessId: 154,
+     ProjectHash: &quot;1bth0t9s2l2bclk3d01q0c7ci4c5ol&quot;,
+     ProjectEmail: &quot;projectemail@domain.com&quot;,
+}
+</code></pre>
+<hr />
+<h3 id="a-companys-cards-from-one-module">A company’s cards from one module</h3>
+<p>It is often necessary to retrieve a company’s cards that are in a given module. You can find the cards using the value of the <code>BusinessId</code> field from the contact response. In the example system used here, I received <code>"BusinessId": 154</code> for myself, so I will use this.</p>
+<p>The module identifier — <code>CategoryId</code> — can be determined using the methods mentioned at the beginning of the document.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project?MainContactId=MainContactId&amp;CategoryId=CategoryId</code></li>
+<li>Parameters:</li>
+<li><code>MainContactId</code> — the main contact ID of the opportunity card; please read more about this in the document</li>
+<li><code>CategoryId</code> — the ID of the product / module within which you want to search for cards</li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/Project?MainContactId=154&amp;CategoryId=20&quot;
+</code></pre>
+<pre><code class="language-json">{
+     &quot;Count&quot;: 1,
+     &quot;Results&quot;: {
+          &quot;160&quot;: {
+               &quot;Id&quot;: 160,
+               &quot;Name&quot;: &quot;Doe Industries LTD (John Doe)&quot;,
+               &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;,
+               &quot;ContactId&quot;: 155,
+               &quot;StatusId&quot;: 2813,
+               &quot;UserId&quot;: 115950,
+               &quot;Deleted&quot;: 0,
+               &quot;BusinessId&quot;: 154
+          }
+     }
+}
+</code></pre>
+<p>If you test it with <code>curl</code>, put the URL between quotation marks, otherwise the part after <code>&amp;</code> will be lost.</p>
+<hr />
+<h3 id="search-based-on-card-status">Search based on card status</h3>
+<p>It is possible to combine the criteria used to narrow the search, for example, a specific customer’s cards in a specific status:</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project?MainContactId=$MainContactId&amp;StatusId=$StatusId</code></li>
+<li>Parameters: <code>MainContactId</code>, <code>StatusId</code></li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/Project?MainContactId=154&amp;StatusId=2810&quot;
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json">{
+     &quot;Count&quot;: 1,
+     &quot;Results&quot;: {
+          &quot;160&quot;: {
+              &quot;Id&quot;: 160,
+              &quot;Name&quot;: &quot;Doe Industries LTD (John Doe)&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;,
+              &quot;ContactId&quot;: 155,
+              &quot;StatusId&quot;: 2810,
+              &quot;UserId&quot;: 115950,
+              &quot;Deleted&quot;: 0,
+              &quot;BusinessId&quot;: 154
+          }
+     }
+}
+</code></pre>
+<hr />
+<h3 id="search-based-on-update-time">Search based on update time</h3>
+<p>If you want to list opportunity cards in the system based on when they were updated, you can do this by product.</p>
+<p>If you want to list the opportunity cards that are located in a specific product and were updated at a specific time, you can use the following request.</p>
+<p>For this, you can use the <code>UpdatedSince</code> and <code>UpdatedAt</code> parameters.</p>
+<p>When you provide the date and time, you can increase or decrease the strictness of the specific condition.</p>
+<h4 id="general-time-and-date-format">General time and date format</h4>
+<p>Exact date — year, month, day — and time — hour, minute, second:</p>
+<pre><code class="language-text">UpdatedAt/Since=yyyy-mm-dd hh:mm:ss
+</code></pre>
+<p>Exact date — year, month, day — without time:</p>
+<pre><code class="language-text">UpdatedAt/Since=yyyy-mm-dd
+</code></pre>
+<p>The minimum information required for the request is: year, month and day.</p>
+<hr />
+<h4 id="1-updatedsince-parameter">1. <code>UpdatedSince</code> parameter</h4>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project?CategoryId=$CategoryId&amp;UpdatedSince=$UpdatedSince</code></li>
+<li>Parameters:</li>
+<li><code>CategoryId</code> — product ID</li>
+<li><code>UpdatedSince</code> — searched date in <code>yyyy-mm-dd hh:mm:ss</code> format</li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<p>With this method, you can list the cards that were updated after a specific date and time.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/Project?CategoryId=$Id&amp;UpdatedSince=yyyy-mm-dd hh:mm:ss&quot;
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 1,
+      &quot;Results&quot;: {
+           &quot;XXXX&quot;: {
+               &quot;Id&quot;: XXXX,
+               &quot;Name&quot;: &quot;Project Name 1&quot;,
+               &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/XXXX&quot;,
+               &quot;ContactId&quot;: XXXX,
+               &quot;StatusId&quot;: XXXX,
+               &quot;UserId&quot;: XXXX,
+               &quot;Deleted&quot;: 0
+           }
+      }
+}
+</code></pre>
+<hr />
+<h4 id="2-updatedat-parameter">2. <code>UpdatedAt</code> parameter</h4>
+<p>With this method, you can list the cards that were updated at a specific date and time.</p>
+<ul>
+<li>API endpoint: <code>https:/r3.minicrm.hu/Api/R3/Project?CategoryId=$CategoryId&amp;UpdatedAt=$UpdatedAt</code></li>
+<li>Parameters:</li>
+<li><code>CategoryId</code> — product ID</li>
+<li><code>UpdatedAt</code> — searched date in <code>yyyy-mm-dd hh:mm:ss</code> format</li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https:/r3.minicrm.hu/Api/R3/Project?CategoryId=$Id&amp;UpdatedAt=yyyy-mm-dd hh:mm:ss&quot;
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json">{
+      &quot;Count&quot;: 1,
+      &quot;Results&quot;: {
+           &quot;XXXX&quot;: {
+               &quot;Id&quot;: XXXX,
+               &quot;Name&quot;: &quot;Project Name 2&quot;,
+               &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/XXXX&quot;,
+               &quot;ContactId&quot;: XXXX,
+               &quot;StatusId&quot;: XXXX,
+               &quot;UserId&quot;: XXXX,
+               &quot;Deleted&quot;: 0
+           }
+      }
+}
+</code></pre>
+<hr />
+<h3 id="search-based-on-fields">Search based on fields</h3>
+<p>It is also possible to search based on a specific field value, or to combine different values, as shown earlier.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project?FieldName=SomeValue</code></li>
+<li>Parameters:</li>
+<li><code>FieldName</code></li>
+<li><code>SomeValue</code> — searched value</li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/Project?Enum1221=Facebook&quot;
+</code></pre>
+<pre><code class="language-json">{
+    &quot;Count&quot;: 1,
+    &quot;Results&quot;: {
+      &quot;260&quot;: {
+        &quot;Id&quot;: 260,
+        &quot;Name&quot;: &quot;John Doe&quot;,
+        &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/260&quot;,
+        &quot;ContactId&quot;: 253,
+        &quot;StatusId&quot;: 2806,
+        &quot;UserId&quot;: 115950,
+        &quot;Deleted&quot;: 0,
+      },
+    },
+}
+</code></pre>
+<hr />
+<h3 id="card-search-extra">Card search — extra</h3>
+<p>You have the ability to search for a list of cards that have specific data saved in them.</p>
+<p>For example, if you want to list the cards that are in the Sales product and the expected revenue is <code>20000 EUR</code>.</p>
+<p>Endpoint:</p>
+<pre><code class="language-text">https://r3.minicrm.hu/Api/R3/Project?CategoryId=$CategoryId&amp;$Customfield=$Value
+</code></pre>
+<p>Endpoint:</p>
+<pre><code class="language-text">https://r3.minicrm.hu/Api/R3/Project?CategoryId=154&amp;RevenueEur=20000
+</code></pre>
+<hr />
+<h3 id="search-the-card-status-history">Search the card status history</h3>
+<p>It is possible to query a card’s status change history via API.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/ProjectHistory/$ProjectId/?Type=StatusHistory</code></li>
+<li>Parameter: <code>ProjectId</code> — card ID</li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<p>The current status of the card is the value of the <code>Status_New_Id</code> variable, and the old status is <code>Status_Old_Id</code>. <code>Status_Old_Name</code> and <code>Status_New_Name</code> are the status names in the system that belong to the identifiers above.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/ProjectHistory/29592?Type=StatusHistory&quot;
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json">{
+     &quot;Count&quot;: &quot;6&quot;,
+     &quot;Results&quot;: {
+          &quot;567&quot;: {
+              &quot;Id&quot;: &quot;567&quot;,
+              &quot;ProjectId&quot;: &quot;160&quot;,
+              &quot;Type&quot;: &quot;StatusHistory&quot;,
+              &quot;UserId&quot;: &quot;0&quot;,
+              &quot;ClosedAt&quot;: &quot;2023-03-23 13:31:20&quot;,
+              &quot;Status_Old_Id&quot;: &quot;2810&quot;,
+              &quot;Status_New_Id&quot;: &quot;2811&quot;,
+              &quot;Status_Old_Name&quot;: &quot;Qualified&quot;,
+              &quot;Status_New_Name&quot;: &quot;VIP&quot;
+          },
+          &quot;353&quot;: {
+              &quot;Id&quot;: &quot;353&quot;,
+              &quot;ProjectId&quot;: &quot;160&quot;,
+              &quot;Type&quot;: &quot;StatusHistory&quot;,
+              &quot;UserId&quot;: &quot;115950&quot;,
+              &quot;ClosedAt&quot;: &quot;2023-03-17 10:40:22&quot;,
+              &quot;Status_Old_Id&quot;: &quot;2801&quot;,
+              &quot;Status_New_Id&quot;: &quot;2806&quot;,
+              &quot;Status_Old_Name&quot;: &quot;Qualify&quot;,
+              &quot;Status_New_Name&quot;: &quot;Follow-up&quot;
+          },
+          &quot;352&quot;: {
+              &quot;Id&quot;: &quot;352&quot;,
+              &quot;ProjectId&quot;: &quot;160&quot;,
+              &quot;Type&quot;: &quot;StatusHistory&quot;,
+              &quot;UserId&quot;: &quot;115950&quot;,
+              &quot;ClosedAt&quot;: &quot;2023-03-17 10:40:08&quot;,
+              &quot;Status_Old_Id&quot;: &quot;&quot;,
+              &quot;Status_New_Id&quot;: &quot;2801&quot;,
+              &quot;Status_Old_Name&quot;: &quot;&quot;,
+              &quot;Status_New_Name&quot;: &quot;Qualify&quot;
+          }
+     }
+}
+</code></pre>
+<hr />
+<h2 id="api-request-to-get-the-contents-of-a-filter">API request to get the contents of a filter</h2>
+<p>When you create a filter in the system, you have the option to save / synchronize the results to Excel.</p>
+<p>You have the option to synchronize the results with Google Sheets, or to create a general HTTP request to retrieve the same data.</p>
+<p>In order to use this method, you need the paid Google Sheet sync add-on, which is available on the <code>Settings -&gt; Subscription</code> page.</p>
+<p>There are two ways to synchronize the data:</p>
+<p>One option is to synchronize all data from the opportunity card and the contact card in list view using a filter created in the system.</p>
+<p>The other option is to view and synchronize specific data from the opportunity and contact cards by switching to table view and adding the specific field.</p>
+<hr />
+<h3 id="creating-the-request">Creating the request</h3>
+<p>For this method, you do not need to use your system ID or API key.</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Endpoint: you can get it by selecting the Google Sheet synchronization option inside the Export option.</li>
+</ul>
+<p>As shown in the picture, the following data can be synchronized:</p>
+<ul>
+<li>opportunity card</li>
+<li>contact person / company card</li>
+<li>tasks / todos</li>
+</ul>
+<p>Here you need to copy the sharing link and use the main endpoint part from it.</p>
+<p>You only need to use the red part from the created function:</p>
+<pre><code class="language-text">=ImportData(&quot;https://r3-test.minicrm.eu/Api/SharedFilter?Hash=64421-0e01938fc48a2cfb5f2217fbfb00722d-EO9tXmhLWydgUmz_GTsTxQ&amp;Type=Project&quot;)
+</code></pre>
+<p>Example response:</p>
+<pre><code class="language-csv">&quot;Card: Id&quot;,&quot;Card: Name&quot;,&quot;Card: Responsible&quot;,&quot;Card: Status&quot;,&quot;Person1: First name&quot;,&quot;Person1: Email&quot;
+0qb24o3d0s0ejgpmds630tlse4wyg5,&quot;Doe Industries LTD (John Doe)&quot;,&quot;Test User&quot;,&quot;First step&quot;,John,john.doe@doeindustries.com
+</code></pre>
+<p>One major advantage of this method is that you can get more and more detailed data in a single API request than if you created multiple queries to obtain the same result.</p>
+<hr />
+<h2 id="all-cards-of-a-company">All cards of a company</h2>
+<p>It is often necessary to retrieve all cards that belong to a company. You can find the cards using the value of the <code>BusinessId</code> field from the contact response.</p>
+<p>In the example system used here, I received <code>"BusinessId": 154</code> for myself, so I will use this.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project?MainContactId=$MainContactId</code></li>
+<li>Parameter: <code>MainContactId</code></li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/Project?MainContactId=154&quot;
+</code></pre>
+<pre><code class="language-json">{
+     &quot;Count&quot;: 3,
+     &quot;Results&quot;: {
+         &quot;160&quot;: {
+             &quot;Id&quot;: 160,
+             &quot;Name&quot;: &quot;Doe Industries LTD (John Doe)&quot;,
+             &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;,
+             &quot;ContactId&quot;: 155,
+             &quot;StatusId&quot;: 2807,
+             &quot;UserId&quot;: 115950,
+             &quot;Deleted&quot;: 0,
+             &quot;BusinessId&quot;: 154
+         },
+         &quot;162&quot;: {
+             &quot;Id&quot;: 162,
+             &quot;Name&quot;: &quot;Mass email sending&quot;,
+             &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/162&quot;,
+             &quot;ContactId&quot;: 155,
+             &quot;StatusId&quot;: 2573,
+             &quot;UserId&quot;: 115950,
+             &quot;Deleted&quot;: 0,
+             &quot;BusinessId&quot;: 154
+         }
+     }
+}
+</code></pre>
+<hr />
+<h2 id="update-a-card">Update a card</h2>
+<p>It is recommended to send only those fields that you would like to modify.</p>
+<p>If you have the card identifier — or API URL — you can also modify data through it. In the examples above, I received <code>"Id": 160</code> during the card search, so I will use this here as well.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$CardId</code></li>
+<li>Parameter: <code>CardId</code></li>
+<li>HTTP method: <code>PUT</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot; -d
+{
+      &quot;AutoSalesV3_Qualification&quot;: &quot;VIP&quot;
+}
+</code></pre>
+<pre><code class="language-json">{
+      &quot;Id&quot;: 256
+}
+</code></pre>
+<p>In the case of dropdown fields, such as <code>StatusId</code> and <code>UserId</code>, you can send the value as you see it on the user interface, or you can use its unique identifier stored in the system — whichever is easier for you.</p>
+<p>After a successful save, the response is a JSON object that contains the opportunity card identifier in the <code>Id</code> property.</p>
+<p>If you want to add a new card, you also need to call the endpoint above using the HTTP <code>PUT</code> method and omit the <code>Id</code> field.</p>
+<p>Among the data sent in, the required fields must be filled in. Which field is required depends on the system, module and status. You can check this on the MiniCRM user interface by manually adding a new card to the selected status of the selected module.</p>
+<hr />
+<h2 id="card-owner-responsible-user">Card owner / responsible user</h2>
+<p>When you create or modify a card with a JSON that contains the responsible user’s name, it works as follows:</p>
+<p>You have the ability to use either the character-accurate name or the ID of the user who will be the responsible user / owner of the given opportunity card when creating or updating it.</p>
+<p>Example JSON:</p>
+<p>User name version:</p>
+<pre><code class="language-json">{
+    &quot;Id&quot;: $ProjectId,
+    &quot;CategoryId&quot;: $CategoryId,
+    &quot;ContactId&quot;: $ContactId,
+    &quot;StatusId&quot;: &quot;Processing&quot;,
+    &quot;UserId&quot;: &quot;Specific User Name&quot;,
+    &quot;Name&quot;: &quot;Test Opportunity card&quot;,
+....
+}
+</code></pre>
+<p>User ID version:</p>
+<pre><code class="language-json">{
+    &quot;Id&quot;: $ProjectId,
+    &quot;CategoryId&quot;: $CategoryId,
+    &quot;ContactId&quot;: $ContactId,
+    &quot;StatusId&quot;: &quot;Processing&quot;,
+    &quot;UserId&quot;: 108637&quot;,
+    &quot;Name&quot;: &quot;Test Opportunity card&quot;,
+....
+}
+</code></pre>
+<p>If the value of the user field contains a typo and there is no active user in your system with that name or ID, the request will still be sent successfully, and you will receive the following response: <code>Ok</code>, with code <code>200</code>. In this case, the system will randomly assign a user to the given opportunity card.</p>
+<p>In the case of users who do not have access to the given product — for example Sales — but the submitted array contains a valid user name or ID, the system will automatically set the responsible user to someone who has access to that product.</p>
+<p>Using this API logic results in fewer request errors and more efficient data processing, since the number of missing cards will be minimal, instead of the system returning an error message and not creating a card because of typos.</p>
+<hr />
+<h2 id="moving-a-card-to-another-contact-connected-to-the-same-company">Moving a card to another contact connected to the same company</h2>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$ProjectId</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Example JSON</li>
+</ul>
+<p>Original:</p>
+<pre><code class="language-json">{
+&quot;ContactId&quot;: 6505
+}
+</code></pre>
+<p>Changed:</p>
+<pre><code class="language-json">{
+&quot;ContactId&quot;: 6623
+}
+</code></pre>
+<hr />
+<h2 id="changing-the-main-contact-of-the-card-when-it-is-connected-to-another-company">Changing the main contact of the card when it is connected to another company</h2>
+<p>For this change, you need to send in the new main contact of the card you want to move, and also the ID of the company to which the contact is connected.</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$ProjectId</code></li>
+<li>Method: <code>PUT</code></li>
+</ul>
+<p>Example JSON:</p>
+<p>Original:</p>
+<pre><code class="language-json">{
+&quot;ContactId&quot;: 6505,
+&quot;BusinessId&quot;: 6504
+}
+</code></pre>
+<p>Changed:</p>
+<pre><code class="language-json">{
+&quot;ContactId&quot;: 1622,
+&quot;BusinessId&quot;: 1235
+}
+</code></pre>
+<p>Limitation:</p>
+<p>In the current version of the system, you cannot change the contact person to another contact person who is not connected to a business entity.</p>
+<hr />
+<h2 id="file-upload-to-a-card">File upload to a card</h2>
+<p>With the card ID or API URL, you can upload a file to a card. It will appear in the history and can be downloaded with a single click. To do this, you need to store the file on a public server — HTTP authentication can be used — where MiniCRM can access and download it.</p>
+<p>You also need to place a <code>File</code> column on your card.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$CardId</code></li>
+<li>Parameter: <code>CardId</code></li>
+<li>HTTP method: <code>PUT</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;-d
+{
+      &quot;$FileColumnName&quot;: &quot;$FileUrl&quot;
+}
+</code></pre>
+<pre><code class="language-json">{
+      &quot;Id&quot;: 160
+}
+</code></pre>
+<p>After successful saving, the response will contain the <code>Id</code> data name and the card ID value.</p>
+<hr />
+<h3 id="multiple-file-upload-to-a-card">Multiple file upload to a card</h3>
+<p>When uploading files, there are two ways to do it from the system and via API as well.</p>
+<p>On opportunity cards, you need to add a file field to the existing fields of your product. There, you have the ability to modify the settings of how file fields work.</p>
+<p>First, you can use the field to hold only 1 file, and when another file is uploaded, the system overwrites the old one.</p>
+<p>Second, you can use file fields to hold multiple files at once. If you want this, check the checkbox in the field settings.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$CardId</code></li>
+<li>Parameter: <code>CardId</code></li>
+<li>HTTP method: <code>PUT</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;-d
+{
+      &quot;$FileFieldName&quot;: &quot;$FileUrl1,$FileUrl2&quot;
+}
+</code></pre>
+<p>Example request:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/Project/160&quot;-d
+{
+&quot;FileField&quot;:&quot;https://file-examples.com/wp-content/storage/2017/02/file_example_XML_24kb.xml,https://file-examples.com/wp-content/storage/2017/02/zip_2MB.zip&quot;
+}
+</code></pre>
+<p>Example response:</p>
+<pre><code class="language-json">{
+    &quot;Id&quot;: 6356
+}
+</code></pre>
+<hr />
+<h2 id="deleting-a-card">Deleting a card</h2>
+<p>You have the ability to put opportunity cards into the Trash via API using the following method:</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$ProjectId</code></li>
+<li>Method: <code>PUT</code></li>
+</ul>
+<p>Example JSON:</p>
+<pre><code class="language-json">{
+      &quot;Deleted&quot;: 1
+}
+</code></pre>
+<p>Important: With this method, you cannot permanently delete data from your system. To do that, you need to log into the system and perform one of the following actions:</p>
+<ul>
+<li>open the Trash in one of your products</li>
+<li>open the opportunity card you want to delete</li>
+<li>click the red <code>Delete permanently</code> button in the upper right corner; here you can permanently delete data using the following methods:</li>
+<li>you can delete only that specific opportunity card and nothing else</li>
+<li>you can delete the contact and all cards connected to it</li>
+</ul>
+<p>Side note: In item-based products, such as Offer, you cannot permanently delete card data.</p>
+<hr />
+<h3 id="creating-a-query-for-deleted-cards">Creating a query for deleted cards</h3>
+<p>You have the ability to get the list of cards that were previously deleted in the given product.</p>
+<p>You cannot create a single request to retrieve all deleted cards from your whole system; you need more than one request for that.</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Project?CategoryId=$CategoryId&amp;Deleted=1</code></li>
+<li>Method: <code>GET</code></li>
+</ul>
+<p>Example JSON response:</p>
+<pre><code class="language-json">{
+     &quot;Count&quot;: 2,
+     &quot;Results&quot;: {
+         &quot;8185&quot;: {
+              &quot;Id&quot;: 8185,
+              &quot;Name&quot;: &quot;Test Contact Project 1&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/8185&quot;,
+              &quot;ContactId&quot;: 6495,
+              &quot;StatusId&quot;: 5227,
+              &quot;UserId&quot;: 108637,
+              &quot;Deleted&quot;: 1
+         },
+         &quot;8186&quot;: {
+              &quot;Id&quot;: 8186,
+              &quot;Name&quot;: &quot;Test Contact 2 Project 2&quot;,
+              &quot;Url&quot;: &quot;https://r3.minicrm.hu/Api/R3/Project/8186&quot;,
+              &quot;ContactId&quot;: 6496,
+              &quot;StatusId&quot;: 5227,
+              &quot;UserId&quot;: 108637,
+              &quot;Deleted&quot;: 1
+         }
+     }
+}
+</code></pre>
+<p>Here, <code>Count</code> indicates the number of deleted cards in the specific product whose ID was used in the endpoint.</p>
+<p>Using the ID received in the response to the first query, you can retrieve the details of the specific opportunity card and the todo list on the Project endpoint.</p>
+<p>You cannot check the status history of a deleted card; you can only do this with active cards.</p>
+<hr />
+<h3 id="modifying-deleted-cards">Modifying deleted cards</h3>
+<p>In the case of opportunity cards, even if they are in the Trash, you have the ability to change the card’s status, fields, or even create / modify a todo on it.</p>
+<p>Regarding todos, it is important to know that if you create a todo on a deleted card, it will not appear in the Today view of that specific user.</p>
+<p>If you want to modify card data:</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$ProjectId</code></li>
+<li>Method: <code>PUT</code></li>
+</ul>
+<p>If you want to create or modify todos on the card:</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Todo/</code></li>
+</ul>
+<p>OR</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Todo/$ToDoId</code></li>
+<li>Method: <code>PUT</code></li>
+</ul>
+<hr />
+<h3 id="restoring-a-card">Restoring a card</h3>
+<p>For this, you can use the general Project endpoint. To restore a specific card, you only need to change the value of the <code>Deleted</code> row.</p>
+<ul>
+<li>Endpoint: <code>https://r3.minicrm.hu/Api/R3/Project/$ProjectId</code></li>
+<li>Method: <code>PUT</code></li>
+</ul>
+<p>Example JSON:</p>
+<pre><code class="language-json">{
+     &quot;Deleted&quot;: 0
+}
+</code></pre>
+<hr />
+<h2 id="delete-a-contact">Delete a contact</h2>
+<p>A contact can be deleted when it is not the primary contact of any card.</p>
+<ul>
+<li>API endpoint: <code>https://r3.minicrm.hu/Api/R3/PurgePerson/$ContactId</code></li>
+<li>Parameter: <code>ContactId</code></li>
+<li>HTTP method: <code>GET</code></li>
+<li>Datatype: <code>JSON</code></li>
+</ul>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/PurgePerson/257&quot;
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json">{
+     &quot;Message&quot;: &quot;Successfully deleted&quot;
+}
+</code></pre>
+<p>If a contact is the primary contact on one or more cards, you need to set a new primary contact on that card by sending a new <code>ContactId</code> to that company.</p>
+<hr />
+<h2 id="error-handling">Error handling</h2>
+<p>If the data to be sent in is not correct, the server will return an <code>HTTP 400 Bad Request</code> response.</p>
+<p>When you are trying API calls in Terminal, by default it is not visible what code MiniCRM returned — <code>200</code> or something else. By using the <code>-w</code> parameter, you can append the return code to any command.</p>
+<p>In case of an error, the response is not JSON-encoded, but a plain text error message.</p>
+<p>If a case similar to the one below occurs, you can determine the possible values through the Schema endpoint mentioned above or on the MiniCRM user interface.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -w &quot;\nHTTP CODE: %{http_code}\n&quot; -XPUT
+&quot;https://r3.minicrm.hu/Api/R3/Project/2056&quot; -d
+{
+     &quot;AutoSalesV3_Qualification&quot;: &quot;Such value cannot be found in the CRM&quot;
+}
+</code></pre>
+<pre><code class="language-text">Project (PUT): Invalid value 'Such value cannot be found in CRM' for the Lead qualification field. HTTP CODE: 400
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

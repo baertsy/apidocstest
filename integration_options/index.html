@@ -1,0 +1,1739 @@
+
+<!doctype html>
+<html lang="hu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/integration_options/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../requirements/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="hu">
+        
+          <link rel="alternate" href="../en/integration_options/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Integrációs Lehetőségek - MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integracios-lehetosegek" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrációs Lehetőségek
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Nyelvváltás">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/integration_options/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../contacts/" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api-vs-xml-szinkronizacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rest API vs. XML szinkronizáció
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamlazo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számlázó API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hivasnaplo-vegpont-voip-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hívásnapló végpont (VOIP integráció)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhookok-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhookok (Webhooks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhookok (Webhooks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhook-szuresi-feltetelek-webhook-filter-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook szűrési feltételek (Webhook filter criteria)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-peldak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook példák
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hogyan-allitsunk-be-webhookokat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hogyan állítsunk be webhookokat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beepitett-integraciok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beépített integrációk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beépített integrációk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minisync-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MiniSync integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naptar-integraciok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naptár integrációk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gmail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facebook-ads-urlapok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Facebook ads űrlapok
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gravity-forms-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gravity forms integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WooCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoprenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shoprenter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenApi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cegjelzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cégjelző
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nav-bejovo-szamlak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAV (Bejövő számlák)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bestjobs-ejobs-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BestJobs / eJobs integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartbill-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SmartBill integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api-vs-xml-szinkronizacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rest API vs. XML szinkronizáció
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szamlazo-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Számlázó API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hivasnaplo-vegpont-voip-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hívásnapló végpont (VOIP integráció)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhookok-webhooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhookok (Webhooks)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Webhookok (Webhooks)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webhook-szuresi-feltetelek-webhook-filter-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook szűrési feltételek (Webhook filter criteria)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webhook-peldak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook példák
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hogyan-allitsunk-be-webhookokat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hogyan állítsunk be webhookokat
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beepitett-integraciok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beépített integrációk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Beépített integrációk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minisync-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MiniSync integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naptar-integraciok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naptár integrációk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gmail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facebook-ads-urlapok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Facebook ads űrlapok
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gravity-forms-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gravity forms integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#woocommerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WooCommerce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shoprenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shoprenter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UNAS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenApi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cegjelzo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cégjelző
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nav-bejovo-szamlak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAV (Bejövő számlák)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bestjobs-ejobs-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BestJobs / eJobs integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smartbill-integracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SmartBill integráció
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="integracios-lehetosegek">INTEGRÁCIÓS LEHETŐSÉGEK</h1>
+<p>A MiniCRM bármilyen olyan alkalmazással integrálható, amely támogatja a Rest API kommunikációt, azzal a megkötéssel, hogy egy adott integrációban a MiniCRM kizárólag a kéréseket váró „passzív” fél lehet. A MiniCRM nem indít kéréseket külső Rest API-k felé.</p>
+<p>A rendszer többféle módszerrel és különféle célokra integrálható más alkalmazásokkal.</p>
+<p>Támogatjuk a Rest API-n és XML szinkronizáción keresztüli integrációkat. Emellett rendelkezünk specifikus Rest API végpontokkal a számlákhoz és a hívásnaplózáshoz is.</p>
+<p>Ebben a kézikönyvben a MiniCRM összes integrációs lehetőségét bemutatjuk.</p>
+<h2 id="rest-api-vs-xml-szinkronizacio">Rest API vs. XML szinkronizáció</h2>
+<p>Az alábbi táblázatban a rendszerben elérhető két fő integrációs módszert hasonlítjuk össze.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rest API</th>
+<th style="text-align: left;">XML szinkronizáció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Kisebb mennyiségű adat átvitelére használatos.</td>
+<td style="text-align: left;">Akkor használatos, ha nagy mennyiségű adatot kell a rendszerbe továbbítani (például 100+ adatlap).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Percenként 60 kéréses korlátozás van érvényben (kérjük, ellenőrizze az API limitekről szóló fejezetet).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Az adatok szinte azonnal szinkronizálódnak (az internetsebességtől függően).</td>
+<td style="text-align: left;">A szinkronizált adatmennyiségtől függően előfordulhat, hogy az átvitel nem látható azonnal.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kommunikációként működik a MiniCRM és egy harmadik féltől származó alkalmazás között, ahol az alkalmazás kéréseket küld a MiniCRM-nek, a rendszer pedig a kért adatokkal válaszol.</td>
+<td style="text-align: left;">Csak egyirányú adatátvitelként működik (a harmadik féltől származó alkalmazásból a MiniCRM felé).</td>
+</tr>
+<tr>
+<td style="text-align: left;">A biztonsági intézkedéseket a harmadik fél alkalmazása valósíthatja meg. A rendszer HTTPS protokollokat használ.</td>
+<td style="text-align: left;">Az XML fájlnak nyilvánosan elérhetőnek kell lennie ahhoz, hogy a rendszer hozzáférjen és feldolgozza azt¹.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Egy teljesen új kártya létrehozásához 3 különböző kérésre van szükség (egy a cégadatlaphoz, egy a kapcsolattartó adatlaphoz és egy az értékesítési/projekt adatlaphoz).</td>
+<td style="text-align: left;">Egy teljesen új kártya létrehozásához (céggel, kapcsolattartóval és adatlappal együtt) egyetlen kérés elegendő.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>¹ Biztonsági okokból IP-korlátozások állíthatók be. Szükség esetén meg tudjuk adni a szervereink IP-címeit.</p>
+</blockquote>
+<p>A fenti táblázatnak elegendő információt kell nyújtania ahhoz, hogy ki tudja választani a megfelelő integrációs módot a rendszerünkkel.</p>
+<p>Például, ha egy webshopot tervez integrálni a MiniCRM-mel, a fenti táblázat alapján valószínűleg az XML szinkronizáció lesz a legmegfelelőbb megoldás, mivel a leggyakoribb esetekben egyszerre nagy mennyiségű adatot szeretne szinkronizálni.</p>
+<p>Ha azonban nem tudja eldönteni, mi a megfelelő módszer a terveihez, kérjük, forduljon hozzánk bizalommal:
+- Romániai ügyfeleknek: suport@minicrm.ro
+- Magyarországi ügyfeleknek: help@minicrm.hu
+- Más országokból érkező ügyfeleknek (kérjük, angolul írjanak): help-en@minicrm.io</p>
+<p>Szívesen segítünk kiválasztani az Ön igényeinek leginkább megfelelő módszert.</p>
+<hr />
+<h2 id="szamlazo-api">Számlázó API</h2>
+<p>Ez a végpont lehetővé teszi az ügyfél számára a MiniCRM-ben lévő számlák kezelését. Képes lesz kezelni a számláit, és olyan műveleteket végezhet, mint új számlák létrehozása, számlák keresése, fizetettként történő megjelölés vagy sztornózás.</p>
+<p>Továbbá a végpont használatával az ügyfél frissítheti a számla adatlapjának mezőit. Részletes információkat a vonatkozó fejezetben találhat.</p>
+<hr />
+<h2 id="hivasnaplo-vegpont-voip-integracio">Hívásnapló végpont (VOIP integráció)</h2>
+<p>A végpont olyan esetekben hasznos, amikor központosított telefonszolgáltatást, például VOIP (Voice Over IP) megoldásokat kell használnia.</p>
+<p>Ez a végpont lehetővé teszi a telefonhívások adatainak tárolását, például: melyik telefonszámot hívták, ki, mikor, és mennyi volt a hívás időtartama. Továbbá rögzítheti és meghallgathatja a telefonhívásokat, ha szüksége van erre a funkcióra, és ha a VOIP megoldása ezt lehetővé teszi².</p>
+<blockquote>
+<p>² Ez a lehetőség az Ön székhelye szerinti ország jogszabályaitól, valamint a GDPR-ra vonatkozó uniós jogszabályoktól is függ. Mi csak ezt a funkciót biztosítjuk, de az ügyfél felelőssége ezen jogi szempontok figyelembevétele, és neki kell gondoskodnia arról, hogy tájékoztassa ügyfeleit a telefonhívások rögzítéséről.</p>
+</blockquote>
+<p>Kérjük, vegye figyelembe, hogy országa jogszabályai és/vagy az európai jogszabályok alapján előfordulhat, hogy tájékoztatnia kell ügyfeleit, és be kell szereznie a hozzájárulásukat a telefonhívások rögzítésére vonatkozó szabályzatról.</p>
+<p>A hívás befejezése után az adott hívás adatai a legutóbb frissített adatlap előzmények (history) szekciójában lesznek rögzítve.</p>
+<p>A következő telefonhívás adatokat rögzítjük:
+- Ki hívott/fogadta a telefonhívást (MiniCRM felhasználó);
+- A telefonhívás állapota (fogadott vagy nem fogadott);
+- A kapcsolattartó neve;
+- A hívásban részt vevő telefonszám;
+- A telefonhívás időtartama;
+- A telefonhívás rögzítése (ez a funkció a VOIP megoldástól függ - néhányuk nem feltétlenül tartalmazza ezt a lehetőséget).</p>
+<hr />
+<h2 id="webhookok-webhooks">Webhookok (Webhooks)</h2>
+<p>Előfordulhatnak olyan helyzetek, amikor egy külső rendszernek vagy alkalmazásnak reagálnia kell egy, a MiniCRM-ben történt változásra. Ezekben az esetekben a webhookok használatát javasoljuk.</p>
+<p>Néhány példa, amikor a webhookok hasznosak lehetnek:
+- <strong>Komplex CRM automatizáció</strong> - egy külső rendszer webhookon keresztül értesül egy új érdeklődőről, jegyről, projektről, számláról, ajánlatról, megrendelésről stb. A rendszer különböző módokon tud reagálni erre az információra.
+- <strong>Szinkronizálás külső rendszerrel</strong> - ha egy adatlap, projekt, jegy, számla stb. frissül a MiniCRM-ben, a külső rendszer is értesül a változásról.</p>
+<p>Az adatlapokon, cégeken vagy kapcsolatokon bekövetkező változások elküldhetők egy, az ügyfél által megadott API végpontra POST kérés formájában.</p>
+<p>A végpontnak HTTP válasszal (200 OK) kell reagálnia, hogy a rendszer az adatokat sikeresen feldolgozottnak tekintse.</p>
+<p>Abban az esetben, ha nem kapunk HTTP 200-as választ, hibát feltételezünk, és további 6 kísérletet teszünk később, az alábbi késleltetésekkel:
+1. 10 másodperc;
+2. 1 perc;
+3. 5 perc;
+4. 15 perc;
+5. 30 perc;
+6. 1 óra.</p>
+<p>A késleltetés az első kísérlettől számítódik, így az adatlap módosítása után a fogadó félnek 1 óra 51 perc és 10 másodperc áll rendelkezésére az adatok feldolgozására. Ha ezen idő alatt nem kerül feldolgozásra, nem teszünk újabb kísérletet, és a változtatásokat elavultnak tekintjük.</p>
+<h3 id="webhook-szuresi-feltetelek-webhook-filter-criteria">Webhook szűrési feltételek (Webhook filter criteria)</h3>
+<p>A túlterhelés elkerülése érdekében számos paraméterrel szűrhető, hogy egy adott végpont mikor hívódjon meg.</p>
+<blockquote>
+<p><strong>FONTOS:</strong> ha a meghívott program a kapott adatok alapján módosításokat végez a MiniCRM REST API-n keresztül, az ismételt értesítéseket válthat ki. Ily módon végtelen ciklus alakulhat ki. Ebben az esetben legyen nagyon óvatos a hívási kritériumok kiválasztásakor. A végpontnak csak olyan mezők változásait kellene figyelnie, amelyeket ő maga már nem fog módosítani.</p>
+</blockquote>
+<p><strong>Típus (Type)</strong>
+- Contact (személy és cég egyaránt)
+- Project (adatlap/kártya)</p>
+<p><strong>Termék (Product)</strong>
+Csak adatlapok (project) esetén értelmezhető. Értesítés kerül kiküldésre, ha egy kiválasztott modulban módosítás történt.
+Ha több, de nem az összes termékről szeretne értesítést kapni, beállíthat több webhookot, minden termékhez külön-külön.</p>
+<p><strong>Mezők (Fields)</strong>
+Konkrét mezők változásának szűrése. A végpont akkor hívódik meg, ha a felsorolt mezők valamelyike megváltozott. Ha nincs mező hozzáadva a végponthoz, a végpont bármely mező változása esetén meghívódik. A termék- és mezőszűrők kombinálhatók.</p>
+<h3 id="webhook-peldak">Webhook példák</h3>
+<p>A Sales (Értékesítés) termék azonosítója (ID) = 3, és szeretném, ha csak az a weboldal, amely tartalmat jelenít meg az előfizetőimnek, kapna értesítést arról, ha egy előfizetés létrejött és/vagy lemondásra került.</p>
+<pre><code class="language-text">Type: Project
+CategoryId: 3
+Fields: [&quot;StatusId&quot;]
+ApiUrl: https://$User:$Pass@example.com/StatusChanged/
+</code></pre>
+<p>A Helpdesk termék azonosítója ID = 4, és szeretném, ha az új jegyeket egy szkript automatikusan előfeldolgozná, hogy komplex követő szekvenciákat hozhassunk létre.</p>
+<pre><code class="language-text">Type: Project
+CategoryId: 4
+Fields: [&quot;CreatedAt&quot;]
+ApiUrl: https://$User:$Pass@example.com/TicketAdded/
+</code></pre>
+<p><strong>Példa JSON adatcsomag (Payload):</strong></p>
+<pre><code class="language-json">{
+   &quot;Id&quot;: &quot;10&quot;,
+   &quot;Type&quot;: &quot;Project&quot;,
+   &quot;Data&quot;: {
+      &quot;CategoryId&quot;: &quot;8&quot;,
+      &quot;ContactId&quot;: &quot;16&quot;,
+      &quot;MainContactId&quot;: &quot;15&quot;,
+      &quot;StatusId&quot;: &quot;11684&quot;,
+      &quot;UserId&quot;: &quot;2&quot;,
+      &quot;Name&quot;: &quot;The card name goes here&quot;,
+      &quot;CreatedBy&quot;: &quot;2&quot;,
+      &quot;CreatedAt&quot;: &quot;2018-03-02 23:35:41&quot;,
+      &quot;UpdatedBy&quot;: &quot;2&quot;,
+      &quot;UpdatedAt&quot;: &quot;2018-03-02 23:55:42&quot;,
+      &quot;InternalUrl&quot;: &quot;[https://r3.minicrm.hu/123456/#Project-8/10](https://r3.minicrm.hu/123456/#Project-8/10)&quot;
+   },
+   &quot;Changed&quot;: [
+      &quot;StatusId&quot;,
+      &quot;UserId&quot;,
+      &quot;Name&quot;,
+      &quot;UpdatedAt&quot;
+   ]
+}
+</code></pre>
+<h3 id="hogyan-allitsunk-be-webhookokat">Hogyan állítsunk be webhookokat</h3>
+<p>Jelenleg a webhookok éles-teszt (live-test) üzemmódban futnak. A belső rendszereink is élő környezetben csatlakoznak ennek használatával.
+Azonban a webhook beállítások nem érhetők el a webes felületen. Kérjük, vegye fel a kapcsolatot az ügyfélszolgálatunkkal további információkért és a webhook beállításának kéréséért.</p>
+<p>Ahogy egyre több valós tapasztalat gyűlik össze, a webhook beállítási lehetőségei és az üzenetek tartalma változhat.</p>
+<hr />
+<h2 id="beepitett-integraciok">Beépített integrációk</h2>
+<p>A beépített integrációk többsége kiegészítő modul (add-on), és előfordulhat, hogy nincsenek aktiválva a rendszerében. Használatukhoz aktiválnia kell őket a MiniCRM rendszerének Beállítások -&gt; Előfizetés (Subscription) oldalán.</p>
+<h3 id="minisync-integracio">MiniSync integráció</h3>
+<p>A MiniSync kizárólag a Professional és Enterprise platformokon érhető el, és csak éves vagy többéves előfizetések, illetve hűségszerződések révén vehető igénybe. Fontos megjegyezni, hogy az integrációkat gyorsabban tudjuk ütemezni/elvállalni, ha azok kompatibilisek a meglévő infrastruktúránkkal.</p>
+<p>A MiniSync egy olyan platform, amelyet az integrációs folyamatok egyszerűsítésére és felgyorsítására terveztek. Egy köztes adatbázist használ a harmadik fél cégektől származó adatok tárolására. Ezeket az adatokat ezután a MiniCRM megfelelő mezőihez rendelik (mapping).</p>
+<p><strong>A MiniSync előnyei</strong>
+A SyncFeed beállításakor nem kell eligazodnia a MiniCRM technikai összetettségében. Az adatokat abban a formátumban/struktúrában küldheti be, ahogyan azokat a harmadik féltől kapta, anélkül, hogy szigorúan be kellene tartania a MiniCRM specifikációit. Nincs szükség a 100+ oldalas API dokumentációnk, a MiniCRM adatstruktúrájának teljes megértésére, vagy az azonosítással/duplikációval, API korlátozásokkal stb. való foglalkozásra. Ha van egy "adatfolyama" (data feed) a saját struktúrájában, az nekünk elegendő. Mi gondoskodunk a leképezési logikáról, és beküldjük a MiniCRM rendszerébe.</p>
+<p><strong>Mikor érdemes a MiniSync-et választani?</strong>
+Lényeges megérteni, hogy az integráció alapvetően egy együttműködési folyamat, amely magában foglalja az Ön és a harmadik fél (lehetőleg az Ön által használt szoftver egy technikai szakembere) részvételét. Bár eszközünk segíthet az adatok lekérésében egy másik szoftverből, a másik szoftverből származó adatok feldolgozása és visszanyerése nem kizárólag a mi felelősségünk. Ehhez a harmadik fél együttműködésére és támogatására van szükség.</p>
+<p><strong>MiniSync használati esetek</strong>
+- Folyamatos adatszinkronizáció két rendszer (pl. MiniCRM és egy ERP) között.
+- Korlátozott erőforrások: Ideális olyan ügyfelek számára, akik nem rendelkeznek belső szoftvertervezési vagy fejlesztési kapacitással, és nincs részletes technikai tudásuk a MiniCRM-ről.</p>
+<p><strong>Az Ön feladatai az integrációs folyamatban:</strong>
+- Képzelje el és dokumentálja igényeit: Jegyezze fel a követelményeit – adatmezők, munkafolyamat ötletek, és hogy hogyan szeretné a dolgok szinkronizálását.
+- Egyeztessen a harmadik féllel az integrációról. Beszéljék meg a technikai részleteket, a díjakat, és biztosítsák, hogy az adatkapcsolat mindig aktív és támogatott maradjon a jövőben.</p>
+<p><strong>A harmadik fél felelősségei:</strong>
+Bár különböző csatlakozókat (connector) kínálunk az adatok kinyerésére a harmadik féltől, kulcsfontosságú, hogy ők biztosítsák a folyamatos hozzáférést a naprakész információkhoz.
+Ezek a csatlakozási formák a következők:
+- <strong>LocalFile Connector</strong> - egyedi végpontot biztosít a harmadik fél számára a friss adatok feltöltéséhez.
+- <strong>HttpDownload Connector</strong> - egy végpontot igényel a harmadik féltől, ahonnan letölthetjük a friss adatokat.
+- <strong>MySQL Connector</strong> - hozzáférést igényel az adott rendszer adatbázisához a szükséges adatok kinyeréséhez. Ez egy időigényesebb csatlakozási forma, mivel meg kell értenünk az adatbázis struktúráját.</p>
+<h3 id="naptar-integraciok">Naptár integrációk</h3>
+<p><strong>Google Naptár</strong>
+Az integráció lehetővé teszi, hogy szinkronizálja a MiniCRM feladatait a Google Naptár fiókjával, és megjelenítse azokat a naptárban. Csak be kell állítani az integrációt, és a feladatok automatikusan szinkronizálódnak.
+Részletek:
+- Románul: https://www.minicrm.ro/help/sincronizarea-cu-calendarul/
+- Magyarul: https://www.minicrm.hu/help/google-naptar-szinkronizalas/</p>
+<p><strong>Egyéb naptárak</strong>
+A MiniCRM képes feladatok szinkronizálására néhány más naptárral is (például Outlook és/vagy iPhone naptár). Az elérhető naptárak listája idővel változhat.</p>
+<h3 id="gmail">Gmail</h3>
+<p>Ez a kiegészítő lehetővé teszi, hogy közvetlenül a beérkező levelek (inbox) mappájából küldjön e-maileket egy adott ügyfél MiniCRM előzményébe (ehhez először meg kell nyitnia egy e-mailt az ügyféltől). Továbbá új kártyákat, feladatokat is hozzáadhat, vagy megnyithatja a MiniCRM-et közvetlenül a Gmail felületéről.
+- Románul: https://www.minicrm.ro/help/integrare-cu-gmail/
+- Magyarul: https://www.minicrm.hu/help/minicrm-integracioja-a-gmail-webes-feluletevel/</p>
+<h3 id="outlook">Outlook</h3>
+<p>Ez az integráció nagyon hasonló a Gmail-eshez.
+- Románul: https://www.minicrm.ro/help/integrare-outlook/
+- Magyarul: https://www.minicrm.hu/help/minicrm-kontaktok-szinkronizalasa-outlook-nevjegyekkel/</p>
+<h3 id="facebook-ads-urlapok">Facebook ads űrlapok</h3>
+<p>Ezzel a beépített integrációval képes lesz begyűjteni a Facebook fizetett hirdetéseiből származó lead-ek adatait közvetlenül a MiniCRM-be.
+- Románul: https://www.minicrm.ro/help/integrarea-cu-facebook-lead-ads/
+- Magyarul: https://www.minicrm.hu/help/facebook-lead-ads-connector/</p>
+<h3 id="gravity-forms-integracio">Gravity forms integráció</h3>
+<p>Ha WordPress alapú weboldalán keresztül szeretné begyűjteni az összes érdeklődőjét a MiniCRM rendszerébe, egyedi webes űrlap dizájnnal, ez az integráció jelenleg a legjobb módszer. A Gravity forms lehetővé teszi stílusos webes űrlapok létrehozását és azok összekötését a rendszerrel.
+- Románul: https://www.minicrm.ro/help/integrare-gravity-forms/
+- Magyarul: https://www.minicrm.hu/help/gravity-forms-integracio/</p>
+<h3 id="woocommerce">WooCommerce</h3>
+<p>Ezt az integrációt abban az esetben használhatja, ha WordPress és WooCommerce webshoppal rendelkezik, hogy a rendeléseit közvetlenül a MiniCRM-be szinkronizálja.
+- Románul: https://www.minicrm.ro/help/integrare-woocommerce/
+- Magyarul: https://www.minicrm.hu/help/woocommerce-integracio/</p>
+<h3 id="shoprenter">Shoprenter</h3>
+<p>Ezzel az integrációval az összes rendelését és ügyfelét szinkronizálhatja Shoprenter webshopjából a rendszerében lévő két különböző termékbe: Webshopba és Rendelésekbe (Orders).
+- Magyarul: https://www.minicrm.hu/help/shoprenter-integracio/</p>
+<h3 id="unas">UNAS</h3>
+<p>Ez a webshop integráció több országban is elérhető, és a többi Webshop integrációhoz hasonlóan működik.
+- Románul: https://www.minicrm.ro/help/sincronizareunaswebshop/
+- Magyarul: https://www.minicrm.hu/help/unas-webshop-integracio/</p>
+<h3 id="openapi">OpenApi</h3>
+<p>Az OpenApi a romániai ListaFirme-hez hasonló szolgáltatás, amely lehetővé teszi a cégek naprakész adatainak lekérését. Az adatok a https://openapi.ro/ adatbázisból származnak. Ez olyan adatokat szinkronizál, mint az Adószám, Cégnév, Cím stb.
+- Románul: https://www.minicrm.ro/help/openapi/</p>
+<h3 id="cegjelzo">Cégjelző</h3>
+<p>Ez a mi beépített megoldásunk arra vonatkozóan, hogyan tarthatja naprakészen a MiniCRM rendszer az Ön adatbázisát és a partnercégek adatait a céginformációkat illetően. Ez a megoldás API-n keresztül működik, és a https://cegjelzo.com/ adatbázisból nyeri az adatokat.
+- Magyarul: https://www.minicrm.hu/help/ceginfo-szolgaltatas-integracio-cegjelzo-creditinfo/</p>
+<h3 id="nav-bejovo-szamlak">NAV (Bejövő számlák)</h3>
+<p>Ezzel az egyedi integrációval lehetőséget biztosítunk arra, hogy szinkronizálja az összes Önnek kiállított számlát, valamint a partnereket, akik kiállították azokat.
+- Magyarul: https://www.minicrm.hu/help/nav-bejovo-szamlak-integracio/</p>
+<h3 id="bestjobs-ejobs-integracio">BestJobs / eJobs integráció</h3>
+<p>Ezek az integrációk segíthetnek abban, hogy a jelöltekről szóló információkat ezekről a platformokról közvetlenül a MiniCRM rendszerébe gyűjtse be.
+- BestJobs: https://www.minicrm.ro/help/integrare-bestjobs/
+- eJobs: https://www.minicrm.ro/help/integrare-ejobs/</p>
+<h3 id="smartbill-integracio">SmartBill integráció</h3>
+<p>Használhatja a MiniCRM és a SmartBill fiókját együttesen; például létrehozhat ajánlatokat vagy rendeléseket a MiniCRM-ből, majd ezen dokumentumok alapján automatikusan generálhatja a számlát a SmartBillben.
+- Románul: https://www.minicrm.ro/help/integrare-smart-bill/</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1508 @@
+
+<!doctype html>
+<html lang="hu" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://baertsy.github.io/apidocstest/todo/">
+      
+      
+        <link rel="prev" href="../templates/">
+      
+      
+        <link rel="next" href="../orders/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="hu">
+        
+          <link rel="alternate" href="../en/todo/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Teendők - MiniCRM API Dokumentáció</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#teendo-vegpont" class="md-skip">
+          Kihagyás
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Élőfej">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-header__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MiniCRM API Dokumentáció
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teendők
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás sötét módra"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Váltás sötét módra" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Váltás világos módra"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Váltás világos módra" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Nyelvváltás">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="hu" class="md-select__link">
+              Magyar
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/todo/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Keresés">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Keresés inicializálása
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Lapok" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Alapok
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration_options/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Integrációs Lehetőségek
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../requirements/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Követelmények
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contacts/" class="md-tabs__link">
+          
+  
+  
+  Végpontok
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../info/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapcsolat
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigáció" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MiniCRM API Dokumentáció" class="md-nav__button md-logo" aria-label="MiniCRM API Dokumentáció" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MiniCRM API Dokumentáció
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrációs Lehetőségek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Követelmények
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Végpontok
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Végpontok
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cégek és Kapcsolatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Címek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../card_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adatlaptársítások
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sablonok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teendők
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uj-teendo-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új teendő létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teendok-keresese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teendők keresése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#egy-teendo-reszletes-adatai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egy teendő részletes adatai
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teendo-frissitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teendő frissítése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teendő frissítése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modosithato-mezok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módosítható mezők
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csak-olvashato-mezok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Csak olvasható mezők
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altalanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Általános
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#egyedi-lezarasi-datum-es-ido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egyedi lezárási dátum és idő
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fajlfeltoltes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fájlfeltöltés
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fájlfeltöltés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#egy-fajl-feltoltese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egy fájl feltöltése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tobb-fajl-feltoltese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Több fájl feltöltése
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendelések
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ajánlatok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Számlázó
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Készlet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../signup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haladó űrlapok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../calllog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voip API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kapcsolat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tartalomjegyzék">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tartalomjegyzék
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uj-teendo-letrehozasa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Új teendő létrehozása
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teendok-keresese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teendők keresése
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#egy-teendo-reszletes-adatai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egy teendő részletes adatai
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teendo-frissitese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teendő frissítése
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Teendő frissítése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modosithato-mezok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módosítható mezők
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csak-olvashato-mezok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Csak olvasható mezők
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altalanos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Általános
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#egyedi-lezarasi-datum-es-ido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egyedi lezárási dátum és idő
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fajlfeltoltes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fájlfeltöltés
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fájlfeltöltés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#egy-fajl-feltoltese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Egy fájl feltöltése
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tobb-fajl-feltoltese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Több fájl feltöltése
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="teendo-vegpont">Teendő végpont</h1>
+<p>Ezzel a végponttal kezelheted a feladataidat — teendőidet —: új feladatokat hozhatsz létre, kereshetsz, frissíthetsz vagy lezárhatsz meglévő feladatokat.</p>
+<hr />
+<h2 id="uj-teendo-letrehozasa">Új teendő létrehozása</h2>
+<p>A <code>ProjectId</code> mező kötelező ahhoz, hogy új teendőt lehessen létrehozni.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/ToDo/</code></li>
+<li>HTTP metódus: <code>POST</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>Példa URL:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/ToDo/&quot;
+</code></pre>
+<pre><code class="language-json">{
+   &quot;UserId&quot;:&quot;MiniCRM Helpdesk&quot;,
+   &quot;ProjectId&quot;:&quot;1331&quot;,
+   &quot;Comment&quot;:&quot;This To-Do was created via API.&quot;,
+   &quot;Status&quot;:&quot;Open&quot;,
+   &quot;Deadline&quot;:&quot;2023-02-23 15:35:40&quot;,
+   &quot;Duration&quot;: 60,
+   &quot;Reminder&quot;: 60,
+   &quot;AddressId&quot;: 4558,
+   &quot;Status&quot;:&quot;Open&quot;
+}
+</code></pre>
+<p>Sikeres beküldés után válaszként egy <code>Id</code> értéket kapsz, amely a teendő azonosítóját jelenti.</p>
+<p>Válasz:</p>
+<pre><code class="language-json">{
+   &quot;Id&quot;:1111
+}
+</code></pre>
+<p>Fontos megjegyezni, hogy új feladat esetén a <code>ProjectId</code> mező beküldése kötelező, meglévő feladat esetén pedig a <code>ProjectId</code> mező már nem szerkeszthető.</p>
+<hr />
+<h2 id="teendok-keresese">Teendők keresése</h2>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/ToDoList/$CardId</code></li>
+<li>Paraméter: <code>CardId</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>Az adatlapot azonosítani kell. Például ezzel az URL-lel lekérdezheted egy adatlap összes teendőjét:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/ToDoList/1234&quot;
+</code></pre>
+<p>A válaszban az eredmény egy blokkban érkezik, ahol a <code>Count</code> mutatja a megtalált teendők számát. A <code>Results</code> alatt külön blokkokban találhatók a teendők.</p>
+<p>A listázott teendők a <code>Status</code> paraméterrel szűrhetők státusz szerint. A teendő lehet:</p>
+<ul>
+<li><code>Open</code></li>
+<li><code>Closed</code></li>
+<li><code>All</code></li>
+</ul>
+<p>Példa nyitott státuszú teendőlistára:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey
+&quot;https://r3.minicrm.hu/Api/R3/ToDoList/1234?Status=Open&quot;
+</code></pre>
+<p>Válasz:</p>
+<pre><code class="language-json">{
+     &quot;Count&quot;:2,
+     &quot;Results&quot;:[
+        {
+            &quot;Id&quot;:&quot;1111&quot;,
+            &quot;Status&quot;:&quot;Open&quot;,
+            &quot;Comment&quot;:&quot;Call the customer and ask for feedback.&quot;,
+            &quot;Deadline&quot;:&quot;2023-03-20 23:59:00&quot;,
+            &quot;UserId&quot;:&quot;3200&quot;,
+            &quot;Type&quot;:&quot;0&quot;,
+            &quot;Url&quot;:&quot;https://r3.minicrm.hu/Api/R3/ToDo/1111&quot;
+        },
+        {
+            &quot;Id&quot;:&quot;2222&quot;,
+            &quot;Status&quot;:&quot;Open&quot;,
+            &quot;Comment&quot;:&quot;Check if it needs further action.&quot;,
+            &quot;Deadline&quot;:&quot;2013-01-22 23:59:00&quot;,
+            &quot;UserId&quot;:&quot;3300&quot;,
+            &quot;Type&quot;:&quot;1566&quot;,
+            &quot;Url&quot;:&quot;https://r3.minicrm.hu/Api/R3/ToDo/2222&quot;
+        }
+     ]
+}
+</code></pre>
+<hr />
+<h2 id="egy-teendo-reszletes-adatai">Egy teendő részletes adatai</h2>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/ToDo/$ToDoId</code></li>
+<li>Paraméter: <code>ToDoId</code></li>
+<li>HTTP metódus: <code>GET</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>Azonosítás szükséges, példa URL:</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey &quot;https://r3.minicrm.hu/Api/R3/ToDo/1111&quot;
+</code></pre>
+<p>A kiválasztott feladat adatainak lekérdezése. Válaszként a teendő egy olyan tömbben érkezik, amely tartalmazza a teendő adatait.</p>
+<p>Válasz:</p>
+<pre><code class="language-json">{
+     &quot;Id&quot;: 3606,
+     &quot;UserId&quot;: &quot;User A&quot;,
+     &quot;ContactId&quot;: 0,
+     &quot;ProjectId&quot;: 7888,
+     &quot;AddressId&quot;: 4558,
+     &quot;SenderUserId&quot;: 0,
+     &quot;Type&quot;: &quot;Test type&quot;,
+     &quot;Duration&quot;: 60,
+     &quot;Reminder&quot;: 60,
+     &quot;Status&quot;: &quot;Open&quot;,
+     &quot;Mode&quot;: &quot;Task&quot;,
+     &quot;Deadline&quot;: &quot;1970-01-01 01:00:00&quot;,
+     &quot;Comment&quot;: &quot;This is a task created via API&quot;,
+     &quot;CreatedBy&quot;: &quot;MiniCRM&quot;,
+     &quot;CreatedAt&quot;: &quot;2024-08-19 13:54:44&quot;,
+     &quot;UpdatedBy&quot;: &quot;MiniCRM&quot;,
+     &quot;UpdatedAt&quot;: &quot;2024-08-19 13:56:22&quot;,
+     &quot;ClosedBy&quot;: &quot;MiniCRM&quot;,
+     &quot;ClosedAt&quot;: &quot;0000-00-00 00:00:00&quot;,
+     &quot;Attachments&quot;: {
+         &quot;FileName&quot;: &quot;test contract.pdf&quot;,
+         &quot;Url&quot;: &quot;https://r3.minicrm.hu/…&quot;
+     },
+     &quot;Members&quot;: [
+         {
+             &quot;Entity&quot;: &quot;User2&quot;,
+             &quot;EntityId&quot;: &quot;109287&quot;
+         }
+     ],
+     &quot;Notes&quot;: [
+         {
+             &quot;Comment&quot;: &quot;Test comment&quot;,
+             &quot;CreatedBy&quot;: &quot;108637&quot;,
+             &quot;CreatedAt&quot;: &quot;2024-08-19 13:55:00&quot;
+         }
+      ]
+}
+</code></pre>
+<hr />
+<h2 id="teendo-frissitese">Teendő frissítése</h2>
+<p>Meglévő teendő módosítása vagy új létrehozása. Célszerű csak a módosított adatokat újraküldeni, hogy a program hatékonyabban fusson, és elkerülhető legyen, hogy időközben már módosított adatokat korábban letöltött értékekre állíts vissza.</p>
+<pre><code class="language-bash">$ curl -s --user $SystemId:$ApiKey -XPUT &quot;https://r3.minicrm.hu/Api/R3/ToDo/1111&quot; -d '
+{
+  &quot;Comment&quot;:&quot;New text sent in via API&quot;,
+  &quot;Deadline&quot;:&quot;2023-03-25 13:30:00&quot;
+}'
+</code></pre>
+<p>Csak a nyitott feladatokat lehet módosítani. Lezárt feladatok nem módosíthatók.</p>
+<p>A szolgáltatás URL-je megegyezik a letöltés URL-jével. A letöltés <code>GET</code> kéréssel indítható, az adatmódosítás pedig <code>PUT</code> kéréssel. Új feladat hozzáadása az azonosító elhagyásával lehetséges — például az URL végén szereplő <code>1111</code> elhagyásával.</p>
+<p>Válasz:</p>
+<pre><code class="language-json">{
+    &quot;Id&quot;:1111
+}
+</code></pre>
+<hr />
+<h3 id="modosithato-mezok">Módosítható mezők</h3>
+<ul>
+<li><code>ContactId</code>: akkor releváns, ha az ügyfélszolgálati termékben lévő feladat válasz e-mail típusú feladat. Ebben az esetben a <code>ContactId</code> a címzett azonosítója.</li>
+<li><code>AddressId</code>: a feladatban megadott cím rendszerazonosítója. Ez az Address végponton keresztül kérdezhető le — lásd a cím végpont fejezetet.</li>
+<li><code>Members</code>: a feladatba bevont érintettek típusa és azonosítója. A Contact végponton keresztül kérdezhető le. Egy feladatban több tag is lehet.</li>
+<li><code>Comment</code>: a megjegyzés szövege.</li>
+<li><code>Duration</code>: megadhatod a feladat elvégzésének tervezett időtartamát. Ez az adat percben értendő.</li>
+<li><code>Reminder</code>: ha a felhasználód kapcsolódik a Google Calendar / Outlook Calendar rendszerhez, értesítéseket kaphatsz. Beállíthatod, hogy az esedékesség előtt hány perccel szeretnél emlékeztetőt kapni.</li>
+<li><code>Status</code>: ez a mező jelzi, hogy a feladat nyitott vagy lezárt. Egy aktív feladat egyszerűen lezárható úgy, hogy ennek a mezőnek az értékét <code>Closed</code> értékre módosítod.</li>
+<li><code>Attachments</code>: ha egy elérhető URL-t illesztesz be, amely egy fájl letöltési linkjére mutat, a fájl automatikusan feltöltődik a feladathoz. Ha több mellékletet szeretnél feltölteni, vesszővel <code>,</code> választhatod el őket, szóköz nélkül.</li>
+</ul>
+<hr />
+<h3 id="csak-olvashato-mezok">Csak olvasható mezők</h3>
+<ul>
+<li><code>CreatedBy</code>: létrehozó — <code>UserId</code>. A <code>Schema/Project</code> végponton keresztül kérdezhető le — lásd az adott fejezetet.</li>
+<li><code>CreatedAt</code>: a feladat létrehozásának idejét adja meg.</li>
+<li><code>UpdateAt</code>: megadja, mikor módosították utoljára a feladatot.</li>
+<li><code>UpdatedBy</code>: melyik felhasználó végezte a legutóbbi módosítást a feladaton.</li>
+<li><code>ClosedAt</code>: mikor lett lezárva a feladat.</li>
+<li><code>ClosedBy</code>: melyik felhasználó zárta le a feladatot.</li>
+<li><code>Mode</code>: értéke lehet <code>Task</code> vagy <code>Email</code>.</li>
+<li><code>Notes</code>: a feladathoz írt megjegyzések mind ebben a tömbben lesznek listázva.</li>
+</ul>
+<hr />
+<h3 id="altalanos">Általános</h3>
+<ul>
+<li><code>Attachments</code>: itt megkapod a legutóbb feltöltött fájl pontos nevét és formátumát, valamint annak letöltési linkjét.</li>
+</ul>
+<p>Ha egy nyitott feladatot <code>POST</code> metódussal módosítasz, és a <code>ClosedAt</code> mezőt adott dátummal küldöd be, miközben a tömb nem tartalmaz <code>Status</code> mezőt, a rendszer lezárja ezt a feladatot.</p>
+<hr />
+<h3 id="egyedi-lezarasi-datum-es-ido">Egyedi lezárási dátum és idő</h3>
+<p>Lehetőséged van lezárni a feladatot, és egyedi lezárási dátumot hozzáadni. Ha így zársz le egy feladatot, az időrendi sorrendben fog megjelenni az adatlap előzményeiben.</p>
+<p>Ez jó megoldás, ha hozzá szeretnéd adni vagy frissíteni szeretnéd a lehetőségadatlap előzményeit, amit más módszerekkel nem lehet megtenni.</p>
+<p>Fontos megjegyezni, hogy először létre kell hoznod egy feladatot, hogy kapj egy azonosítót, majd ezt módosíthatod az alábbi példa alapján.</p>
+<p>Ez csak akkor működik, ha a feladat normál <code>Closed</code> vagy <code>Failed</code> státuszban van. Nem fog működni, ha a feladatot a rendszerben <code>Successful</code> státuszra zárod.</p>
+<p>A <code>Closed</code> vagy <code>Successful</code> státuszok nem jelennek meg abban a JSON tömbben, amelyet válaszként kapsz; ezek csak a rendszerben, a lehetőségadatlap előzményeiben lesznek láthatók.</p>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/ToDo/$ToDoId</code></li>
+<li>Paraméter: <code>ToDoId</code></li>
+<li>HTTP metódus: <code>Post</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<p>Példa kérés:</p>
+<pre><code class="language-json">{
+  &quot;Status&quot;:&quot;Closed&quot;,
+  &quot;ClosedAt&quot;: &quot;2009-01-09&quot;
+}
+</code></pre>
+<p>Válasz:</p>
+<pre><code class="language-json">{
+   &quot;Id&quot;:1111
+}
+</code></pre>
+<h2 id="fajlfeltoltes">Fájlfeltöltés</h2>
+<ul>
+<li>API végpont: <code>https://r3.minicrm.hu/Api/R3/ToDo/$ToDoId</code></li>
+<li>Paraméter: <code>ToDoId</code></li>
+<li>HTTP metódus: <code>PUT</code></li>
+<li>Adattípus: <code>JSON</code></li>
+</ul>
+<h3 id="egy-fajl-feltoltese">Egy fájl feltöltése</h3>
+<pre><code class="language-json">{
+    &quot;Attachments&quot;: &quot;https://www.testsite1.com/files/test.pdf&quot;
+}
+</code></pre>
+<h3 id="tobb-fajl-feltoltese">Több fájl feltöltése</h3>
+<pre><code class="language-json">{
+     &quot;Attachments&quot;: &quot;https://www.testsite1.com/files/test.pdf,https://www.testsite2.com/documents/test_2.pdf&quot;
+}
+</code></pre>
+<p>Lehetőséged van egy vagy több fájlt egyszerre feltölteni egy feladathoz. Ha új fájlt töltesz fel, az hozzáadódik a már feltöltött mellékletekhez, nem írja felül azokat.</p>
+<p>Nem tölthetsz fel olyan fájlt vagy fájlokat, amelyek együttes mérete nagyobb mint 24 MB.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
