@@ -29,10 +29,10 @@ plugins:
   - i18n:
       default_language: hu
       languages:
-        hu:
+        - code: hu
           name: Magyar
           build: true
-        en:
+        - code: en
           name: English
           build: true
       nav_translations:
