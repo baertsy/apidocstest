@@ -16,7 +16,7 @@ Ezzel lehetőséged van webformot létrehozni a MiniCRM rendszereden belül, és
 
 ---
 
-# Webform létrehozása
+## Webform létrehozása
 
 1. Hozz létre egy webformot a rendszeredben a kívánt mezőkkel.
 2. Szerezd meg a mezőneveket az űrlap HTML-kódjából:
@@ -53,7 +53,7 @@ Ezt másold ki:
 
 ---
 
-# Űrlap beküldése API-n keresztül
+## Űrlap beküldése API-n keresztül
 
 Példa API-kérés `curl` használatával `POST` kérés küldésére:
 
@@ -67,7 +67,7 @@ $ curl -s --user $SystemId:$ApiKey -XPOST "https://r3.minicrm.hu/Api/Signup" \
 
 ---
 
-# API-válasz magyarázata
+## API-válasz magyarázata
 
 Űrlapbeküldés után az API ehhez hasonló JSON-választ ad vissza:
 
