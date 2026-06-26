@@ -1,0 +1,31 @@
+site_name: MiniCRM API Dokumentáció
+site_url: https://baertsy.github.io/apidocstest/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Váltás sötét módra
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Váltás világos módra
+  features:
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Alapok (Basics): index.md
+  - Végpontok:
+    - Cégek és Kapcsolatok: company.md
+    - Rendelések (Orders): orders.md
