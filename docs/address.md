@@ -40,9 +40,9 @@ Siker esetén a rendszer az újonnan létrehozott cím azonosítójával válasz
 
 ---
 
-# Cím keresése
+## Cím keresése
 
-## Keresés kapcsolattartó / cég azonosító alapján
+### Keresés kapcsolattartó / cég azonosító alapján
 
 - API végpont: `https://r3.minicrm.hu/Api/R3/AddressList/ContactId`
 - Paraméter: `ContactId` — meglévő kapcsolattartó- vagy cégazonosító
@@ -101,7 +101,7 @@ A rendszer strukturált formában válaszol a címadatokkal:
 
 ---
 
-## Keresés cím azonosító alapján
+### Keresés cím azonosító alapján
 
 - API végpont: `https://r3.minicrm.hu/Api/R3/Address/AddressId`
 - Paraméter: `AddressId` — meglévő cím azonosítója
