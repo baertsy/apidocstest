@@ -55,9 +55,9 @@ A hitelesítés kötelező. A válasz tartalmazza a rendelés összes adatát é
 
 ---
 
-# Rendelések keresése
+## Rendelések keresése
 
-## Rendelés részletes adatai
+### Rendelés részletes adatai
 
 - API végpont: `https://r3.minicrm.hu/Api/Order/$OrderId`
 - Paraméter: `OrderId`
@@ -124,7 +124,7 @@ $ curl -s --user $SystemId:$ApiKey "https://r3.minicrm.hu/Api/Order/$OrderId"
 
 ---
 
-# Rendeléslista végpont
+## Rendeléslista végpont
 
 A lenti kérés használatával API-n keresztül lekérheted a létrehozott rendeléseid listáját. A listázás 100 eredményt ad vissza. A lapozás a `Page` paraméterrel végezhető; további részletek a Lapozás fejezetben találhatók.
 
@@ -168,7 +168,7 @@ Megjegyzés: a Stock végpont részében a rendeléslista végpontként `https:/
 
 ---
 
-# Rendelés adatainak frissítése
+## Rendelés adatainak frissítése
 
 Rendelés adatainak módosítása csak `Draft` státuszban lehetséges. A `CustomerId` vagy `ReferenceId` beküldése kötelező. A `CurrencyCode` változó szerkesztése nem engedélyezett; ezt a rendelés létrehozásakor kell `POST` kéréssel beküldeni.
 
@@ -189,7 +189,7 @@ Válaszként a módosított rendelést kapod meg az új `Subject` értékkel.
 
 ---
 
-## Rendelési tétel hozzáadása
+### Rendelési tétel hozzáadása
 
 - API végpont: `https://r3.minicrm.hu/Api/Order/$OrderId`
 - Paraméter: `OrderId`
@@ -215,7 +215,7 @@ $ curl -s --user $SystemId:$ApiKey -XPOST "https://r3.minicrm.hu/Api/Order/83" -
 
 ---
 
-## Rendelési tétel szerkesztése
+### Rendelési tétel szerkesztése
 
 Az `ItemId` megadásával felülírhatod az adott rendelési tételt. Megváltoztathatod magát a tételt vagy annak mennyiségét.
 
@@ -282,7 +282,7 @@ Rövidített válaszpélda:
 
 ---
 
-## Egyedi rendelési mezők szerkesztése
+### Egyedi rendelési mezők szerkesztése
 
 Ha egyedi mezőket hoztál létre a rendelés adatlapján, ezeket státuszkorlátozás nélkül szerkesztheted.
 
@@ -301,9 +301,9 @@ $ curl -s --user $SystemId:$ApiKey -XPOST "https://r3.minicrm.hu/Api/Order/83/Pr
 
 ---
 
-# Rendelés státuszának szerkesztése
+## Rendelés státuszának szerkesztése
 
-## Rendelés véglegesítése
+### Rendelés véglegesítése
 
 A rendelés státuszát `Draft` értékről `In progress` értékre állítja. A szerkesztés csak akkor működik, ha a rendelés `Draft` státuszban van.
 
